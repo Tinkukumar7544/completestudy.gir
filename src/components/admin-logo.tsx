@@ -1,4 +1,5 @@
 import { useEffect, useState, type ReactNode } from "react";
+import { useRouterState } from "@tanstack/react-router";
 import { toast } from "sonner";
 import { ADMIN_SESSION_KEY } from "@/lib/admin/copy";
 import { readLogoFile } from "@/lib/admin/logo";
@@ -7,10 +8,16 @@ import { cn } from "@/lib/utils";
 
 export function useAdminUnlocked() {
   const owner = useAdminState().ownerEmail;
+  const pathname = useRouterState({ select: (s: { location: { pathname: string } }) => s.location.pathname });
   const [on, setOn] = useState(false);
   useEffect(() => {
+    if (!pathname.startsWith("/admin")) {
+      sessionStorage.removeItem(ADMIN_SESSION_KEY);
+      setOn(false);
+      return;
+    }
     setOn(Boolean(owner) && sessionStorage.getItem(ADMIN_SESSION_KEY) === owner);
-  }, [owner]);
+  }, [owner, pathname]);
   return on;
 }
 

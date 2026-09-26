@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { ChevronRight, Pencil, Plus, Radio, Trash2, Users } from "lucide-react";
+import { ChevronRight, Plus, Radio, Trash2, Users } from "lucide-react";
 import { toast } from "sonner";
 import { StudyShell } from "@/components/study-shell";
 import { ExamPathHome } from "@/components/exam-path";
@@ -78,25 +78,9 @@ function GameBack() {
 function TargetPicker() {
   const navigate = useNavigate();
   const prefs = useExamStore((s) => s.prefs);
-  const setPrefs = useExamStore((s) => s.setPrefs);
-  const setAdminCopy = useExamStore((s) => s.setAdminCopy);
   const copy = useAdminCopy();
   const admin = useAdminState();
   const name = sectionLabel(copy.target.name, prefs.targetExamName, "Target Exam");
-  const [renameOpen, setRenameOpen] = useState(false);
-  const [draft, setDraft] = useState(name);
-
-  useEffect(() => {
-    setDraft(name);
-  }, [name]);
-
-  function saveName() {
-    const next = draft.trim() || "Target Exam";
-    setPrefs({ targetExamName: next });
-    setAdminCopy((current) => ({ ...current, target: { ...current.target, name: next } }));
-    setRenameOpen(false);
-    toast.success(`Section renamed to ${next}`);
-  }
 
   const games = [
     {
@@ -118,14 +102,6 @@ function TargetPicker() {
   return (
     <StudyShell title={name}>
       <div className="mx-auto grid max-w-lg gap-4 p-4 pb-8">
-        <div className="flex justify-end px-1">
-          {functionAccess(admin, "target.rename").allowed ? (
-          <Button type="button" variant="outline" size="sm" onClick={() => setRenameOpen(true)}>
-            <Pencil className="size-4" />
-            Rename
-          </Button>
-          ) : null}
-        </div>
         <ul className="grid gap-4">
           {games.map((item) => (
             <li key={item.game}>
@@ -153,31 +129,6 @@ function TargetPicker() {
           Back to the path
         </Button>
       </div>
-
-      <Dialog open={renameOpen} onOpenChange={setRenameOpen}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Rename this section</DialogTitle>
-            <DialogDescription>Examples: GATE, NEET, Overman, SSC CGL. This is the name on the bottom bar.</DialogDescription>
-          </DialogHeader>
-          <div className="grid gap-3">
-            <div>
-              <Label htmlFor="target-name">Section name</Label>
-              <Input
-                id="target-name"
-                className="mt-2"
-                value={draft}
-                onChange={(e) => setDraft(e.target.value)}
-                placeholder="Target Exam"
-                onKeyDown={(e) => {
-                  if (e.key === "Enter") saveName();
-                }}
-              />
-            </div>
-            <Button onClick={saveName}>Save name</Button>
-          </div>
-        </DialogContent>
-      </Dialog>
     </StudyShell>
   );
 }

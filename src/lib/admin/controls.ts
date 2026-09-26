@@ -145,7 +145,7 @@ export function readControls(raw: unknown): AdminControls {
         hint: typeof fnRow.hint === "string" ? fnRow.hint : "",
         enabled: fnRow.enabled !== false,
         planId: typeof fnRow.planId === "string" ? fnRow.planId : "",
-        builtin: fnRow.builtin !== false && base.functions.some((fn) => fn.id === id),
+        builtin: base.functions.some((fn) => fn.id === id) ? true : fnRow.builtin === true,
       });
     }
   }

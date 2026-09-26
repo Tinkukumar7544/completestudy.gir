@@ -102,10 +102,10 @@ function Settings() {
                 size="sm"
                 variant="outline"
                 onClick={() => {
-                  void signOut("/").catch(() => toast.error("Could not disconnect"));
+                  void signOut("/login?mode=signin&via=email").catch(() => toast.error("Could not log out"));
                 }}
               >
-                Disconnect
+                Log out
               </Button>
             </div>
           </div>

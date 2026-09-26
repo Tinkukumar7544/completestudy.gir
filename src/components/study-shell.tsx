@@ -5,7 +5,6 @@ import {
   BookMarked,
   BadgeCheck,
   ClipboardList,
-  ChevronLeft,
   FileUp,
   GraduationCap,
   HelpCircle,
@@ -36,8 +35,9 @@ import { SectionNav, FocusMark } from "@/components/section-nav";
 import { FocusGuard } from "@/components/focus-guard";
 import { useAdminCopy, useAdminState, useRouteAccess } from "@/lib/admin/use-copy";
 import { sectionLabel } from "@/lib/admin/copy";
-import { functionAccess, type SectionId } from "@/lib/admin/controls";
+import { functionAccess, defaultFunctions, type SectionId } from "@/lib/admin/controls";
 import { useCurrentUserState } from "@/lib/auth/use-current-user";
+import { signOut } from "@/lib/auth/client";
 import { importHtmlTest } from "@/lib/exam/html-import";
 import { useExamStore } from "@/lib/exam/store";
 import { syncNow, toastOutcome, useSyncUi } from "@/lib/exam/sync";
@@ -300,6 +300,15 @@ export function StudyShell({
             <DropdownMenuItem onSelect={() => void navigate({ to: "/settings" })}>Settings</DropdownMenuItem>
             <DropdownMenuItem onSelect={() => void navigate({ to: "/privacy" })}>Privacy policy</DropdownMenuItem>
             <DropdownMenuItem onSelect={() => void navigate({ to: "/terms" })}>Terms and conditions</DropdownMenuItem>
+            {user ? (
+              <DropdownMenuItem
+                onSelect={() => {
+                  void signOut("/login?mode=signin&via=email").catch(() => toast.error("Could not log out"));
+                }}
+              >
+                Log out
+              </DropdownMenuItem>
+            ) : null}
             <DropdownMenuItem onSelect={() => void navigate({ to: "/delete-account" })}>Delete account</DropdownMenuItem>
             <DropdownMenuItem onSelect={() => void navigate({ to: "/admin" })}>
               <Shield className="size-4" /> Admin
@@ -360,11 +369,6 @@ export function StudyShell({
       </Sheet>
 
       <main className={cn("relative z-10", immersive ? "" : "pb-32")}>
-        {pathname === "/" ? null : (
-          <button type="button" aria-label="Back" onClick={goBack} className="ml-3 mt-2 inline-flex size-6 items-center justify-center text-foreground">
-            <ChevronLeft className="size-4" />
-          </button>
-        )}
         {routeAccess.state === "off" ? (
           <p className="px-6 py-16 text-center text-sm text-muted-foreground">This section is turned off in Admin.</p>
         ) : routeAccess.state === "locked" ? (
@@ -388,8 +392,9 @@ export function StudyShell({
 function SectionExtras({ section }: { section: SectionId | null }) {
   const admin = useAdminState();
   const navigate = useNavigate();
+  const builtinIds = new Set(defaultFunctions().map((item) => item.id));
   if (!section) return null;
-  const extras = admin.controls.functions.filter((item) => item.section === section && !item.builtin);
+  const extras = admin.controls.functions.filter((item) => item.section === section && !item.builtin && !builtinIds.has(item.id));
   if (!extras.length) return null;
   return (
     <ul className="mx-auto grid max-w-lg gap-2 px-4 pt-3">
@@ -428,11 +433,4 @@ function sectionHint(pathname: string, copy: ReturnType<typeof useAdminCopy>) {
   if (pathname.startsWith("/coaching") || pathname.startsWith("/discuss") || pathname.startsWith("/class")) return copy.coaching.intro;
   if (pathname.startsWith("/target")) return copy.target.intro;
   return "";
-}
-
-function goBack() {
-  if (window.history.length > 1) {
-    window.history.back();
-    return;
-  }
 }
