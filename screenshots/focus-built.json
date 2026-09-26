@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8081/focus?view=apps&id=&range=30d",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "SetPaper",
+      "hasCanvas": false,
+      "bodyTextLen": 2636,
+      "bodyTextHash": "e8374573a31a25377d955c247403c883e2e96fa645f0c218469d05e706f46308",
+      "bodyTextPrefix": "Focus APPS GROUPS ST SetPaper Tests S M T W T F S SN SetPaper No",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/focus-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "SetPaper",
+      "hasCanvas": false,
+      "bodyTextLen": 2636,
+      "bodyTextHash": "e8374573a31a25377d955c247403c883e2e96fa645f0c218469d05e706f46308",
+      "bodyTextPrefix": "Focus APPS GROUPS ST SetPaper Tests S M T W T F S SN SetPaper No",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/focus-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/focus-built.json"
+}

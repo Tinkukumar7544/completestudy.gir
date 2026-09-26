@@ -1,0 +1,1616 @@
+{
+  "deckName": "Rock Mechanics, Supports & Subsidence",
+  "description": "Overman/Sirdar practice — RMR, roof supports, subsidence, PPV. 115 MCQs.",
+  "questions": [
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "According to the classification of rocks by bedding planes, rocks are classified as \"Massive\" when the bedding planes are at a distance of:",
+      "options": [
+        "Less than 75 mm",
+        "Between 75 mm and 1.2 m",
+        "Exactly 1.0 m",
+        "More than 1.2 m"
+      ],
+      "correct": 3,
+      "explanation": "Correct answer is D. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Rock Classification, Stresses, Subsidence Basics & Immediate Roof (Q1-Q25)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "Which of the following refers to the stress that remains even after the cause of the stress has been removed?",
+      "options": [
+        "Vertical stress",
+        "Induced stress",
+        "Residual stress",
+        "Inherent stress"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Rock Classification, Stresses, Subsidence Basics & Immediate Roof (Q1-Q25)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "What is the approximate density of rocks in Indian coal mines?",
+      "options": [
+        "1.500 t/m³",
+        "2.306 t/m³",
+        "3.105 t/m³",
+        "4.000 t/m³"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Rock Classification, Stresses, Subsidence Basics & Immediate Roof (Q1-Q25)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "The \"Immediate roof\" in a coal mine is generally considered to be up to what distance above the roof?",
+      "options": [
+        "2 meters",
+        "3 meters",
+        "6 meters",
+        "10 meters"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Rock Classification, Stresses, Subsidence Basics & Immediate Roof (Q1-Q25)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "The pressure that exists in the strata before any mining activity has started is called:",
+      "options": [
+        "Abutment Pressure",
+        "Virgin Pressure",
+        "Shear Pressure",
+        "Tensile Pressure"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Rock Classification, Stresses, Subsidence Basics & Immediate Roof (Q1-Q25)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "Where is \"Shear Pressure\" primarily developed after excavation?",
+      "options": [
+        "At the center of the excavation",
+        "In the middle of the goaf",
+        "Near the edges of the pillar and the jointing point of the excavated roof",
+        "Only in the immediate floor"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Rock Classification, Stresses, Subsidence Basics & Immediate Roof (Q1-Q25)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "In the pressure arch theory, the vacuum space created by the sagging beds is referred to as:",
+      "options": [
+        "Inflexion space",
+        "Weber's space/cavity",
+        "Tensile dome",
+        "Critical area"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Rock Classification, Stresses, Subsidence Basics & Immediate Roof (Q1-Q25)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "In Longwall (LW) mining, where is the Front Abutment pressure typically located?",
+      "options": [
+        "Exactly at the working face",
+        "30m to 50m behind the face",
+        "Slightly away from the face, usually half a pillar ahead or 3m to 10m ahead",
+        "It disappears completely due to rock breaking"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Rock Classification, Stresses, Subsidence Basics & Immediate Roof (Q1-Q25)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "The compressive strength of sandstone is approximately:",
+      "options": [
+        "2.25 kg/sq.mm",
+        "13.5 kg/sq.mm",
+        "20.0 kg/sq.mm",
+        "5.5 kg/sq.mm"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Rock Classification, Stresses, Subsidence Basics & Immediate Roof (Q1-Q25)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "Which test is used to measure the tensile strength of rocks?",
+      "options": [
+        "Compressive test",
+        "Brazilian test",
+        "Shear test",
+        "Impact test"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Rock Classification, Stresses, Subsidence Basics & Immediate Roof (Q1-Q25)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "The angle made by the line joining the edge of the working and the edge of subsidence with the vertical is called the:",
+      "options": [
+        "Angle of draw",
+        "Angle of break",
+        "Angle of inflexion",
+        "Critical angle"
+      ],
+      "correct": 0,
+      "explanation": "Correct answer is A. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Rock Classification, Stresses, Subsidence Basics & Immediate Roof (Q1-Q25)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "The Subsidence factor is defined as the ratio of:",
+      "options": [
+        "Maximum possible subsidence to the depth of the seam",
+        "Maximum possible subsidence to the mining height",
+        "Mining height to the gallery width",
+        "Angle of draw to the angle of break"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Rock Classification, Stresses, Subsidence Basics & Immediate Roof (Q1-Q25)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "What happens at the \"Point of inflexion\" during subsidence?",
+      "options": [
+        "Tensile stress is at its absolute maximum",
+        "Compressive stress is at its absolute maximum",
+        "Tensile strain changes into compressive strain (no compression or tension here)",
+        "The surface cracks completely"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Rock Classification, Stresses, Subsidence Basics & Immediate Roof (Q1-Q25)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "An extraction area where maximum subsidence occurs at more than one point on the surface is known as a:",
+      "options": [
+        "Sub-critical area",
+        "Super-critical area",
+        "Critical area",
+        "Virgin area"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Rock Classification, Stresses, Subsidence Basics & Immediate Roof (Q1-Q25)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "What is the safe limit of strain for subsidence in India?",
+      "options": [
+        "5 mm/m",
+        "10 mm/m",
+        "15 mm/m",
+        "20 mm/m"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Rock Classification, Stresses, Subsidence Basics & Immediate Roof (Q1-Q25)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "Which theory of subsidence applies specifically to loose mediums like sand?",
+      "options": [
+        "Beam/Plate theory",
+        "Dome theory",
+        "Particulate theory",
+        "Trough theory"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Rock Classification, Stresses, Subsidence Basics & Immediate Roof (Q1-Q25)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "Why must 0.6m of coal be left against a Shale roof?",
+      "options": [
+        "Because shale is extremely hard and damages drill bits",
+        "Because shale disintegrates upon contact with water, making it a treacherous roof",
+        "To increase the calorific value of the run-of-mine coal",
+        "Because shale exerts very high lateral stress"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Rock Classification, Stresses, Subsidence Basics & Immediate Roof (Q1-Q25)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "What does RQD stand for in rock mass classification?",
+      "options": [
+        "Rock Quality Designation",
+        "Rock Quantity Determination",
+        "Roof Quality Dimension",
+        "Rock Quotient Data"
+      ],
+      "correct": 0,
+      "explanation": "Correct answer is A. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Rock Classification, Stresses, Subsidence Basics & Immediate Roof (Q1-Q25)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "An RQD value of 0-25% indicates that the rock quality is:",
+      "options": [
+        "Good",
+        "Fair",
+        "Very Poor",
+        "Excellent"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Rock Classification, Stresses, Subsidence Basics & Immediate Roof (Q1-Q25)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "The RMR (Rock Mass Rating) system for immediate roof stability evaluates the roof up to what height above the gallery?",
+      "options": [
+        "1 meter",
+        "2 meters",
+        "3 meters",
+        "6 meters"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Rock Classification, Stresses, Subsidence Basics & Immediate Roof (Q1-Q25)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "Which parameter carries the maximum rating (30 points) in the CMRS/ISM Geomechanics Classification for RMR?",
+      "options": [
+        "Structural features",
+        "Layer thickness",
+        "Rock weatherability",
+        "Ground water seepage"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Rock Classification, Stresses, Subsidence Basics & Immediate Roof (Q1-Q25)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "If the RMR of a roof is 40 or less, which type of support is specifically recommended?",
+      "options": [
+        "Friction props",
+        "Timber cogs",
+        "Resin grouted bolts",
+        "Steel arches"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Rock Classification, Stresses, Subsidence Basics & Immediate Roof (Q1-Q25)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "For continuous miner operations, how is the RMR value adjusted?",
+      "options": [
+        "Reduced by 10%",
+        "Increased by 10%",
+        "Reduced by 30%",
+        "No adjustment (Nil)"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Rock Classification, Stresses, Subsidence Basics & Immediate Roof (Q1-Q25)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "According to the Paul Committee report, the length of a roof bolt should be at least what fraction of the gallery width?",
+      "options": [
+        "1/2",
+        "1/3",
+        "1/4",
+        "2/3"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Rock Classification, Stresses, Subsidence Basics & Immediate Roof (Q1-Q25)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "At junctions, the bolting density should be increased by:",
+      "options": [
+        "10%",
+        "25%",
+        "50%",
+        "100%"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Rock Classification, Stresses, Subsidence Basics & Immediate Roof (Q1-Q25)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "In anchorage testing of roof bolts, what percentage of installed bolts are subjected to a random pull test?",
+      "options": [
+        "1%",
+        "5%",
+        "10%",
+        "20%"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "RMR, Roof Bolting, Anchorage Testing & Support Capacities (Q26-Q55)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "\"Quick setting\" for a roof bolt means it should develop an anchorage capacity of 10 KN in 30 minutes and approximately how much in 2 hours?",
+      "options": [
+        "20 KN",
+        "30 KN",
+        "50 KN",
+        "100 KN"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "RMR, Roof Bolting, Anchorage Testing & Support Capacities (Q26-Q55)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "A roof bolt must not fail in a tensile test up to a minimum load of:",
+      "options": [
+        "10 tonnes",
+        "12 tonnes",
+        "16 tonnes",
+        "20 tonnes"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "RMR, Roof Bolting, Anchorage Testing & Support Capacities (Q26-Q55)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "The diameter of the drilled hole for a roof bolt should not exceed the bolt's diameter by more than:",
+      "options": [
+        "2 to 5 mm",
+        "8 to 12 mm",
+        "15 to 20 mm",
+        "25 mm"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "RMR, Roof Bolting, Anchorage Testing & Support Capacities (Q26-Q55)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "What type of prop setting is used in steep seams?",
+      "options": [
+        "Vertical",
+        "Normal to the dip",
+        "Underset Prop",
+        "Horizontal"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "RMR, Roof Bolting, Anchorage Testing & Support Capacities (Q26-Q55)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "The minimum length of a cogging member (for heights up to 3m) should not be less than:",
+      "options": [
+        "1.0 m",
+        "1.2 m",
+        "1.5 m",
+        "2.0 m"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "RMR, Roof Bolting, Anchorage Testing & Support Capacities (Q26-Q55)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "What is the load-bearing capacity of a Timber prop?",
+      "options": [
+        "1 to 2 tonnes",
+        "5 to 6 tonnes",
+        "10 to 12 tonnes",
+        "15 to 20 tonnes"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "RMR, Roof Bolting, Anchorage Testing & Support Capacities (Q26-Q55)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "What is the load-bearing capacity of a Resin grouted roof bolt?",
+      "options": [
+        "5 to 6 tonnes",
+        "8 to 12 tonnes",
+        "12 to 18 tonnes",
+        "20 to 30 tonnes"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "RMR, Roof Bolting, Anchorage Testing & Support Capacities (Q26-Q55)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "According to DGMS, the minimum load-bearing capacity of a Steel prop should be:",
+      "options": [
+        "10 tonnes",
+        "20 tonnes",
+        "30 tonnes",
+        "40 tonnes"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "RMR, Roof Bolting, Anchorage Testing & Support Capacities (Q26-Q55)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "In a Yielding prop, the load at which the upper part of the prop starts to slide is called:",
+      "options": [
+        "Setting load",
+        "Peak load",
+        "Yield load",
+        "Ultimate load"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "RMR, Roof Bolting, Anchorage Testing & Support Capacities (Q26-Q55)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "Which type of powered support has a caving shield attached to the rear but is unsuitable for weak roofs due to large gaps between the face and legs?",
+      "options": [
+        "Frame type",
+        "Chock type",
+        "Shield type",
+        "Chock Shield type"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "RMR, Roof Bolting, Anchorage Testing & Support Capacities (Q26-Q55)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "In a Chock Shield support, what mechanism ensures that the roof piece moves parallel to the floor?",
+      "options": [
+        "Hydraulic ram",
+        "Lemniscate linkage",
+        "Suspension beam",
+        "Friction wedge"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "RMR, Roof Bolting, Anchorage Testing & Support Capacities (Q26-Q55)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "In the Q-System formula for rock mass classification, what does \"Jn\" stand for?",
+      "options": [
+        "Joint roughness number",
+        "Joint set number",
+        "Joint alteration number",
+        "Joint water reduction factor"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "RMR, Roof Bolting, Anchorage Testing & Support Capacities (Q26-Q55)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "In the Q-System, what does the term (Jr / Ja) represent?",
+      "options": [
+        "Block size",
+        "Active stress",
+        "Shear strength or nature of the rock",
+        "Groundwater seepage"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "RMR, Roof Bolting, Anchorage Testing & Support Capacities (Q26-Q55)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "An RMR value of 60-80 falls under which Class of roof?",
+      "options": [
+        "Class I (Very Good)",
+        "Class II (Good)",
+        "Class III (Fair)",
+        "Class IV (Poor)"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "RMR, Roof Bolting, Anchorage Testing & Support Capacities (Q26-Q55)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "An RMR value of 0-20 represents which class of roof?",
+      "options": [
+        "Class V (Very Poor)",
+        "Class IV (Poor)",
+        "Class III (Fair)",
+        "Class II (Good)"
+      ],
+      "correct": 0,
+      "explanation": "Correct answer is A. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "RMR, Roof Bolting, Anchorage Testing & Support Capacities (Q26-Q55)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "For calculating RMR adjustments, if the depth of workings is between 400m and 600m, the RMR is reduced by:",
+      "options": [
+        "10%",
+        "20%",
+        "30%",
+        "It is increased by 10%"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "RMR, Roof Bolting, Anchorage Testing & Support Capacities (Q26-Q55)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "If there is a working above the current seam with a parting of 3m to 10m, the RMR can be reduced by up to:",
+      "options": [
+        "10%",
+        "20%",
+        "30%",
+        "50%"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "RMR, Roof Bolting, Anchorage Testing & Support Capacities (Q26-Q55)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "What is the most accepted criterion for evaluating blast damage to underground workings?",
+      "options": [
+        "Frequency of vibration",
+        "Peak Particle Velocity (PPV)",
+        "Decibel level",
+        "Air overpressure"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "RMR, Roof Bolting, Anchorage Testing & Support Capacities (Q26-Q55)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "Which of the following damage categories includes superficial cracks on pillars/roof and cracks in isolation stoppings?",
+      "options": [
+        "No appreciable damage",
+        "Threshold damage",
+        "Minor damage",
+        "Major damage"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "RMR, Roof Bolting, Anchorage Testing & Support Capacities (Q26-Q55)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "Which part of the underground structure experiences a faster \"attenuation\" (weakening) of vibration?",
+      "options": [
+        "Floor",
+        "Roof",
+        "Pillar",
+        "Coal face"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "RMR, Roof Bolting, Anchorage Testing & Support Capacities (Q26-Q55)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "A seismograph used for measuring blast vibrations underground should be capable of recording particle velocities up to:",
+      "options": [
+        "50 mm/s",
+        "100 mm/s",
+        "250 mm/s",
+        "500 mm/s"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "RMR, Roof Bolting, Anchorage Testing & Support Capacities (Q26-Q55)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "Where is the seismograph transducer typically placed for taking observations in an underground mine?",
+      "options": [
+        "At the center of the goaf",
+        "At the roof junction, or inside the pillar at 0.5 to 0.6m depth",
+        "Inside the sump",
+        "On the haulage track"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "RMR, Roof Bolting, Anchorage Testing & Support Capacities (Q26-Q55)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "For an RMR of 20-30, what is the Threshold PPV Value for a Pillar?",
+      "options": [
+        "20 mm/s",
+        "30 mm/s",
+        "50 mm/s",
+        "100 mm/s"
+      ],
+      "correct": 0,
+      "explanation": "Correct answer is A. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "RMR, Roof Bolting, Anchorage Testing & Support Capacities (Q26-Q55)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "For an RMR of 60-80, what is the Threshold PPV Value for the Roof?",
+      "options": [
+        "50 mm/s",
+        "70 mm/s",
+        "100 mm/s",
+        "120 mm/s"
+      ],
+      "correct": 3,
+      "explanation": "Correct answer is D. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "RMR, Roof Bolting, Anchorage Testing & Support Capacities (Q26-Q55)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "Which is the most common, cheap, and easily available support used in Indian mines?",
+      "options": [
+        "Steel arch",
+        "Powered support",
+        "Dry and seasoned Sal (Hind - Sakhua) timber",
+        "Resin bolts"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "RMR, Roof Bolting, Anchorage Testing & Support Capacities (Q26-Q55)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "In metal mines, a timber prop is also commonly referred to as a:",
+      "options": [
+        "Stull",
+        "Chock",
+        "Cog",
+        "Sprag"
+      ],
+      "correct": 0,
+      "explanation": "Correct answer is A. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "RMR, Roof Bolting, Anchorage Testing & Support Capacities (Q26-Q55)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "The disease \"Dry rot\" in timber is caused by:",
+      "options": [
+        "High temperature",
+        "Fungus attack",
+        "Excessive water pressure",
+        "Termites"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "RMR, Roof Bolting, Anchorage Testing & Support Capacities (Q26-Q55)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "Which type of timber is highly susceptible to both Dry and Wet rot?",
+      "options": [
+        "Seasoned timber",
+        "Chemically treated timber",
+        "Unseasoned timber (Green timber)",
+        "Bamboo"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "RMR, Roof Bolting, Anchorage Testing & Support Capacities (Q26-Q55)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "According to the \"Suspension Theory\" of roof bolting, the dead weight of the loose strata is transferred to:",
+      "options": [
+        "The immediate floor",
+        "The side pillars",
+        "An upper strong anchor layer",
+        "The wire mesh"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "RMR, Roof Bolting, Anchorage Testing & Support Capacities (Q26-Q55)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "Which roof bolting theory works by binding multiple layers of strata together to increase frictional effect and prevent tensile failure?",
+      "options": [
+        "Beam Building (Beam theory)",
+        "Arching Action",
+        "Keying Effect",
+        "Suspension Theory"
+      ],
+      "correct": 0,
+      "explanation": "Correct answer is A. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Powered Supports, Q-System, Blast Vibration & Timber Supports (Q56-Q85)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "The \"Keying Effect\" (Keystone Theory) is highly useful when the roof strata is:",
+      "options": [
+        "Massive and unbroken",
+        "Extremely blocky and fractured",
+        "Composed of pure sandstone",
+        "Highly wet and muddy"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Powered Supports, Q-System, Blast Vibration & Timber Supports (Q56-Q85)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "The main objective of the \"Arching Action\" theory in roof bolting is to:",
+      "options": [
+        "Suspend the roof like a pendulum",
+        "Increase the compressive stress value in the roof to ignore tensile stress",
+        "Create a void for gas accumulation",
+        "Allow the roof to sag up to 2 meters"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Powered Supports, Q-System, Blast Vibration & Timber Supports (Q56-Q85)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "In the Arching Action theory, what is recommended to support the weak zones between the bolts?",
+      "options": [
+        "Timber cogs",
+        "Hydraulic props",
+        "Wire mesh and Shotcrete",
+        "Steel girders"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Powered Supports, Q-System, Blast Vibration & Timber Supports (Q56-Q85)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "The width that can be extracted without causing any movement on the surface is called:",
+      "options": [
+        "Sub-critical width",
+        "Critical width",
+        "Non Effective Width (NEW)",
+        "Super-critical width"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Powered Supports, Q-System, Blast Vibration & Timber Supports (Q56-Q85)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "What is the approximate value of the Non Effective Width (NEW) in India relative to the depth of extraction?",
+      "options": [
+        "0.1 to 0.2 times the depth",
+        "0.3 to 1.17 times the depth",
+        "1.5 to 2.0 times the depth",
+        "2.5 times the depth"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Powered Supports, Q-System, Blast Vibration & Timber Supports (Q56-Q85)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "In subsidence control, \"Harmonic mining\" is a technique where:",
+      "options": [
+        "Only 10% of the coal is extracted",
+        "The tensile stress of one seam neutralizes the compressive stress of another",
+        "Mining is done only during rainy seasons",
+        "The goaf is completely stowed with sand"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Powered Supports, Q-System, Blast Vibration & Timber Supports (Q56-Q85)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "According to the notes, flaggy rocks have bedding planes at a distance of:",
+      "options": [
+        "Less than 75 mm",
+        "75 mm to 1.2 m",
+        "1.2 m to 2.0 m",
+        "More than 2.0 m"
+      ],
+      "correct": 0,
+      "explanation": "Correct answer is A. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Powered Supports, Q-System, Blast Vibration & Timber Supports (Q56-Q85)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "The inherent stress in rocks is caused by:",
+      "options": [
+        "The weight of upper layers only",
+        "Excavation of galleries",
+        "Natural causes like folding, faulting, and igneous intrusions",
+        "Blasting operations"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Powered Supports, Q-System, Blast Vibration & Timber Supports (Q56-Q85)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "Which stress acts at right angles to the burden stress and is significantly lesser than the vertical stress?",
+      "options": [
+        "Residual stress",
+        "Lateral stress",
+        "Shear stress",
+        "Tensile stress"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Powered Supports, Q-System, Blast Vibration & Timber Supports (Q56-Q85)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "Tensile stress in an excavation is maximum at the:",
+      "options": [
+        "Center of the excavation",
+        "Corner points",
+        "Immediate floor",
+        "Goaf edge"
+      ],
+      "correct": 0,
+      "explanation": "Correct answer is A. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Powered Supports, Q-System, Blast Vibration & Timber Supports (Q56-Q85)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "In a narrow Longwall face, the pressure arch is:",
+      "options": [
+        "Extremely massive",
+        "Similar to that in Bord & Pillar (B&P)",
+        "Non-existent",
+        "Only located in the floor"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Powered Supports, Q-System, Blast Vibration & Timber Supports (Q56-Q85)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "A rock's ability to resist deformation caused by slippage parallel to the applied tension is defined as its:",
+      "options": [
+        "Compressive strength",
+        "Tensile strength",
+        "Shear stress/strength",
+        "Weatherability"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Powered Supports, Q-System, Blast Vibration & Timber Supports (Q56-Q85)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "The compressive strength of coal is approximately:",
+      "options": [
+        "1.00 kg/sq.mm",
+        "2.25 kg/sq.mm",
+        "13.5 kg/sq.mm",
+        "20.0 kg/sq.mm"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Powered Supports, Q-System, Blast Vibration & Timber Supports (Q56-Q85)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "What is the value of the constant 'K' in the strain formula (Strain = K * Smax / H) for India?",
+      "options": [
+        "0.5",
+        "1",
+        "1.5",
+        "2.0"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Powered Supports, Q-System, Blast Vibration & Timber Supports (Q56-Q85)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "In RMR classification, what is the maximum rating given to Ground water seepage?",
+      "options": [
+        "10",
+        "15",
+        "20",
+        "30"
+      ],
+      "correct": 0,
+      "explanation": "Correct answer is A. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Powered Supports, Q-System, Blast Vibration & Timber Supports (Q56-Q85)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "In RMR classification, what is the maximum rating given to the Strength of the roof rock?",
+      "options": [
+        "10",
+        "15",
+        "20",
+        "25"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Powered Supports, Q-System, Blast Vibration & Timber Supports (Q56-Q85)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "If the gallery span is between 4.5m and 6.0m, how is the RMR adjusted?",
+      "options": [
+        "It is increased by 10%",
+        "It is reduced by 10-20%",
+        "It is reduced by 30%",
+        "There is no change"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Powered Supports, Q-System, Blast Vibration & Timber Supports (Q56-Q85)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "The minimum length of a roof bolt should generally not be less than:",
+      "options": [
+        "0.5 meters",
+        "1.0 meters",
+        "1.5 meters",
+        "2.0 meters"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Powered Supports, Q-System, Blast Vibration & Timber Supports (Q56-Q85)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "For a \"Fair\" roof, what is the recommended bolting density?",
+      "options": [
+        "0.7 bolts/sqm",
+        "1.0 bolts/sqm",
+        "1.2 to 1.5 bolts/sqm",
+        "2.0 bolts/sqm"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Powered Supports, Q-System, Blast Vibration & Timber Supports (Q56-Q85)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "For a \"Poor\" roof, what is the recommended bolting density?",
+      "options": [
+        "0.7 bolts/sqm",
+        "1.0 bolts/sqm",
+        "1.2 to 1.5 bolts/sqm",
+        "0.5 bolts/sqm"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Powered Supports, Q-System, Blast Vibration & Timber Supports (Q56-Q85)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "What percentage of installed roof bolts are subjected to destructive testing?",
+      "options": [
+        "1%",
+        "5%",
+        "10%",
+        "15%"
+      ],
+      "correct": 0,
+      "explanation": "Correct answer is A. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Powered Supports, Q-System, Blast Vibration & Timber Supports (Q56-Q85)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "The anchorage testing of roof bolts must be done under the supervision of:",
+      "options": [
+        "The Mining Mate",
+        "The Assistant Manager / Under Manager (Bolting-Overman)",
+        "The General Manager only",
+        "The Chief Inspector of Mines"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Powered Supports, Q-System, Blast Vibration & Timber Supports (Q56-Q85)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "The bearing plate for a roof bolt should be flat under a minimum load of:",
+      "options": [
+        "5 tonnes",
+        "10 tonnes",
+        "14 tonnes",
+        "20 tonnes"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Powered Supports, Q-System, Blast Vibration & Timber Supports (Q56-Q85)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "Roof bolts should not show any deterioration when subjected to an accelerated weathering test for:",
+      "options": [
+        "5 days",
+        "10 days",
+        "20 days",
+        "30 days"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Powered Supports, Q-System, Blast Vibration & Timber Supports (Q56-Q85)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "For a timber prop setting, the LID dimension should not be less than:",
+      "options": [
+        "25cm x 5cm x Prop dia",
+        "50cm x 8cm x Prop dia",
+        "75cm x 10cm x Prop dia",
+        "100cm x 15cm x Prop dia"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Powered Supports, Q-System, Blast Vibration & Timber Supports (Q56-Q85)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "What is the required setting load for vertical supports to prevent them from dislodging due to blasting?",
+      "options": [
+        "Minimum 2 tonnes",
+        "Minimum 5 tonnes",
+        "Minimum 10 tonnes",
+        "Minimum 15 tonnes"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Powered Supports, Q-System, Blast Vibration & Timber Supports (Q56-Q85)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "In Safari clamps/cross bar supports, what should be the minimum depth of the side hole?",
+      "options": [
+        "10 cm",
+        "30 cm",
+        "50 cm",
+        "100 cm"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Powered Supports, Q-System, Blast Vibration & Timber Supports (Q56-Q85)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "According to DGMS, what is the minimum load-bearing capacity required for an Iron chock?",
+      "options": [
+        "10 tonnes",
+        "20 tonnes",
+        "30 tonnes",
+        "40 tonnes"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Powered Supports, Q-System, Blast Vibration & Timber Supports (Q56-Q85)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "What is the load-bearing capacity of a Timber chock?",
+      "options": [
+        "5 to 10 tonnes",
+        "10 to 20 tonnes",
+        "20 to 30 tonnes",
+        "30 to 40 tonnes"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Powered Supports, Q-System, Blast Vibration & Timber Supports (Q56-Q85)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "What is the load-bearing capacity of a Steel arch?",
+      "options": [
+        "10 to 15 tonnes",
+        "15 to 20 tonnes",
+        "20 to 25 tonnes",
+        "30 to 40 tonnes"
+      ],
+      "correct": 3,
+      "explanation": "Correct answer is D. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Advanced Supports, PPV Thresholds & Numerical Problems (Q86-Q115)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "In powered supports, the setting load is typically kept high at what percentage to resist lateral pressure from roof machinery?",
+      "options": [
+        "30% or more",
+        "50% or more",
+        "70% or more",
+        "90% or more"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Advanced Supports, PPV Thresholds & Numerical Problems (Q86-Q115)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "In the 6 stages of powered support (Portnov, 1972), stage 5 represents:",
+      "options": [
+        "Pressure drop due to valve closure",
+        "Decelerated convergence",
+        "Peak load (sharp increase when the cutter loader passes)",
+        "Pressure drop upon releasing the prop"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Advanced Supports, PPV Thresholds & Numerical Problems (Q86-Q115)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "In the Q-System, what does the (Jw / SRF) parameter represent?",
+      "options": [
+        "Active stress",
+        "Block size",
+        "Shear strength",
+        "RQD"
+      ],
+      "correct": 0,
+      "explanation": "Correct answer is A. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Advanced Supports, PPV Thresholds & Numerical Problems (Q86-Q115)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "Under the Q-System classification, a Q-value of 10 to 40 denotes the rock mass quality as:",
+      "options": [
+        "Poor",
+        "Fair",
+        "Good",
+        "Very good"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Advanced Supports, PPV Thresholds & Numerical Problems (Q86-Q115)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "If lateral stress in a mine is \"High\", the RMR value is adjusted by:",
+      "options": [
+        "Reducing by 10%",
+        "Reducing by 20%",
+        "Reducing by 30%",
+        "Increasing by 10%"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Advanced Supports, PPV Thresholds & Numerical Problems (Q86-Q115)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "If there is adjacent working in the same seam with an extraction of 20-40m, the RMR is reduced by:",
+      "options": [
+        "10%",
+        "20%",
+        "30%",
+        "Nil"
+      ],
+      "correct": 0,
+      "explanation": "Correct answer is A. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Advanced Supports, PPV Thresholds & Numerical Problems (Q86-Q115)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "The method of excavation known as \"Undercut and blasting\" requires what adjustment to the RMR?",
+      "options": [
+        "Increase by 10%",
+        "Reduce by 10%",
+        "Reduce by 20%",
+        "Nil (No adjustment)"
+      ],
+      "correct": 3,
+      "explanation": "Correct answer is D. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Advanced Supports, PPV Thresholds & Numerical Problems (Q86-Q115)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "In opencast blasting near underground workings, the frequency of vibration has:",
+      "options": [
+        "A major impact on underground mines",
+        "No significant impact on underground mines",
+        "A moderate impact only on pillars",
+        "An impact only if the RMR is above 80"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Advanced Supports, PPV Thresholds & Numerical Problems (Q86-Q115)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "For analyzing seismograph data, the Regression analysis method used is:",
+      "options": [
+        "Highest peak method",
+        "Least mean square method and Square root scaling law",
+        "Simple moving average",
+        "Standard deviation law"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Advanced Supports, PPV Thresholds & Numerical Problems (Q86-Q115)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "Which of the following is a factor affecting Peak Particle Velocity (PPV)?",
+      "options": [
+        "Type and quantity of explosive",
+        "Distance from the blast site",
+        "Geological and structural properties of the rock",
+        "All of the above"
+      ],
+      "correct": 3,
+      "explanation": "Correct answer is D. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Advanced Supports, PPV Thresholds & Numerical Problems (Q86-Q115)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "Regarding blast damage, which part of the underground working is more susceptible to cracking than the galleries?",
+      "options": [
+        "The goaf edges",
+        "The junctions",
+        "The solid coal pillars",
+        "The floor"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Advanced Supports, PPV Thresholds & Numerical Problems (Q86-Q115)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "For an RMR of 40-50, the Threshold PPV Value for the Roof is:",
+      "options": [
+        "50-70 mm/s",
+        "70-100 mm/s",
+        "100-120 mm/s",
+        "120 mm/s"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Advanced Supports, PPV Thresholds & Numerical Problems (Q86-Q115)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "Seasoning of timber helps to evaporate which component, thereby preventing fungus attack?",
+      "options": [
+        "Lignin",
+        "Sap",
+        "Bark",
+        "Cellulose"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Advanced Supports, PPV Thresholds & Numerical Problems (Q86-Q115)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "If the gallery height is 1.2m to 1.5m, the recommended diameter for Sal props at the thick end is:",
+      "options": [
+        "50 mm to 75 mm",
+        "100 mm to 125 mm",
+        "150 mm to 175 mm",
+        "175 mm to 225 mm"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Advanced Supports, PPV Thresholds & Numerical Problems (Q86-Q115)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "What is the approximate vertical stress at a depth of 200 meters?",
+      "options": [
+        "10 kg/sq.cm",
+        "20 kg/sq.cm",
+        "40 kg/sq.cm",
+        "60 kg/sq.cm"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Advanced Supports, PPV Thresholds & Numerical Problems (Q86-Q115)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "What will be the approximate vertical stress at a depth of 500 meters?",
+      "options": [
+        "50 kg/sq.cm",
+        "100 kg/sq.cm",
+        "150 kg/sq.cm",
+        "200 kg/sq.cm"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Advanced Supports, PPV Thresholds & Numerical Problems (Q86-Q115)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "In a 2-meter core run (200 cm), the lengths of core pieces greater than 10 cm are 15 cm, 25 cm, 12 cm, 30 cm, and 18 cm. What is the Rock Quality Designation (RQD)?",
+      "options": [
+        "25%",
+        "50%",
+        "75%",
+        "100%"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Advanced Supports, PPV Thresholds & Numerical Problems (Q86-Q115)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "The unadjusted RMR of a roof is evaluated at 50. If the workings are at a depth of 450m, what will be the adjusted RMR considering only the depth factor?",
+      "options": [
+        "35",
+        "40",
+        "45",
+        "50"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Advanced Supports, PPV Thresholds & Numerical Problems (Q86-Q115)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "An initial RMR calculation yields 60. The working involves a continuous miner and a gallery span of 5.0m. Applying these two adjustment factors, what is the final approximate RMR?",
+      "options": [
+        "48",
+        "54",
+        "59",
+        "66"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Advanced Supports, PPV Thresholds & Numerical Problems (Q86-Q115)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "A coal seam gallery has a width of 4.8 meters. According to the Paul Committee report, what should be the absolute minimum length of the roof bolt used?",
+      "options": [
+        "1.2 m",
+        "1.5 m",
+        "1.6 m",
+        "2.0 m"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Advanced Supports, PPV Thresholds & Numerical Problems (Q86-Q115)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "A gallery is 4.2 meters wide. What is the required minimum roof bolt length?",
+      "options": [
+        "1.2 m",
+        "1.4 m",
+        "1.5 m",
+        "1.8 m"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Advanced Supports, PPV Thresholds & Numerical Problems (Q86-Q115)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "A junction has a \"Fair\" roof requiring a base bolting density of 1.0 bolts/sqm. What must be the bolting density at this junction?",
+      "options": [
+        "1.00 bolts/sqm",
+        "1.10 bolts/sqm",
+        "1.25 bolts/sqm",
+        "1.50 bolts/sqm"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Advanced Supports, PPV Thresholds & Numerical Problems (Q86-Q115)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "During a Brazilian test, a rock specimen fails at a load (F) of 3140 kg. The specimen has a diameter (D) of 10 cm and a length (L) of 5 cm. Using π ≈ 3.14, what is its tensile strength?",
+      "options": [
+        "20 kg/sq.cm",
+        "40 kg/sq.cm",
+        "60 kg/sq.cm",
+        "80 kg/sq.cm"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Advanced Supports, PPV Thresholds & Numerical Problems (Q86-Q115)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "In a subsidence calculation for an Indian mine (K=1), the maximum subsidence (Smax) is 1.5 meters and the depth of the seam (H) is 150 meters. What is the strain in mm/m?",
+      "options": [
+        "5 mm/m",
+        "10 mm/m",
+        "15 mm/m",
+        "20 mm/m"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Advanced Supports, PPV Thresholds & Numerical Problems (Q86-Q115)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "Based on Indian standards for Non Effective Width (NEW), if a mine is at a depth of 200m, what is the maximum possible width that can be extracted without surface movement?",
+      "options": [
+        "60 meters",
+        "100 meters",
+        "150 meters",
+        "234 meters"
+      ],
+      "correct": 3,
+      "explanation": "Correct answer is D. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Advanced Supports, PPV Thresholds & Numerical Problems (Q86-Q115)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "A cement capsule used for roof bolting develops 3 tonnes of anchorage after 30 minutes, 5 tonnes after 2 hours, and 10 tonnes after 24 hours. What will be its strength after 28 days?",
+      "options": [
+        "10 tonnes",
+        "12 tonnes",
+        "15 tonnes",
+        "20 tonnes"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Advanced Supports, PPV Thresholds & Numerical Problems (Q86-Q115)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "A bearing plate (dome washer plate) for a roof bolt has dimensions of 150mm × 150mm × 8mm. What is the surface area of the flat square face of this plate?",
+      "options": [
+        "1200 sq.mm",
+        "22500 sq.mm",
+        "30000 sq.mm",
+        "150000 sq.mm"
+      ],
+      "correct": 1,
+      "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Advanced Supports, PPV Thresholds & Numerical Problems (Q86-Q115)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "If a gallery height is 2.0 meters, what is the required diameter of the Sal props to be used?",
+      "options": [
+        "50 mm to 100 mm",
+        "100 mm to 125 mm",
+        "150 mm to 175 mm",
+        "175 mm to 225 mm"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Advanced Supports, PPV Thresholds & Numerical Problems (Q86-Q115)"
+    },
+    {
+      "type": "mcq",
+      "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+      "question": "A support system offers a total Support Resistance of 45 tonnes/m². The calculated Rock Load is 15 tonnes/m². What is the Safety Factor?",
+      "options": [
+        "1.5",
+        "2.0",
+        "3.0",
+        "4.5"
+      ],
+      "correct": 2,
+      "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR.",
+      "sourceSection": "Advanced Supports, PPV Thresholds & Numerical Problems (Q86-Q115)"
+    }
+  ]
+}

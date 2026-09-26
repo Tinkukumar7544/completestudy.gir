@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/focus?view=apps&id=&range=30d",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "SetPaper",
+      "hasCanvas": false,
+      "bodyTextLen": 2713,
+      "bodyTextHash": "2cfca09714e7f52af964c46a8270f20b50f1e1cd7cec77980e72feda88d01229",
+      "bodyTextPrefix": "Focus Grant device access so locks run on this device APPS GROUP",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/focus-home.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "SetPaper",
+      "hasCanvas": false,
+      "bodyTextLen": 2713,
+      "bodyTextHash": "2cfca09714e7f52af964c46a8270f20b50f1e1cd7cec77980e72feda88d01229",
+      "bodyTextPrefix": "Focus Grant device access so locks run on this device APPS GROUP",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/focus-home-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/focus-home.json"
+}

@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "SetPaper",
+      "hasCanvas": false,
+      "bodyTextLen": 280,
+      "bodyTextHash": "11f1192a3abaa6d3113d19f9d460d8036728bdb7db545d7731b412fcbd2ed186",
+      "bodyTextPrefix": "Tests Create account or sign in Email ID or mobile number — test",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "SetPaper",
+      "hasCanvas": false,
+      "bodyTextLen": 280,
+      "bodyTextHash": "11f1192a3abaa6d3113d19f9d460d8036728bdb7db545d7731b412fcbd2ed186",
+      "bodyTextPrefix": "Tests Create account or sign in Email ID or mobile number — test",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

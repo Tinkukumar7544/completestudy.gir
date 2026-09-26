@@ -1,0 +1,2905 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCS iON | Rock Mechanics, Supports &amp; Subsidence Practice Test (Overman/Sirdar)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Roboto+Mono:wght@400;500&amp;display=swap');
+        
+        :root {
+            --tcs-blue: #003366;
+            --tcs-light-blue: #0055A4;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .tcs-header {
+            background: linear-gradient(to right, #003366, #0055A4);
+        }
+        
+        .question-palette {
+            scrollbar-width: thin;
+            scrollbar-color: #cbd5e1 #f8fafc;
+        }
+        
+        .palette-btn {
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 13px;
+            transition: all 0.2s ease;
+            border: 2px solid #e2e8f0;
+        }
+        
+        .palette-btn.not-visited { background: #fff; color: #64748b; }
+        .palette-btn.answered { background: #22c55e; color: white; border-color: #16a34a; }
+        .palette-btn.not-answered { background: #f97316; color: white; border-color: #ea580c; }
+        .palette-btn.marked { background: #a855f7; color: white; border-color: #9333ea; }
+        .palette-btn.answered-marked { 
+            background: #22c55e; 
+            color: white; 
+            border: 3px solid #a855f7; 
+            box-shadow: 0 0 0 2px #fff;
+        }
+        
+        .question-container {
+            min-height: 420px;
+        }
+        
+        .option-label {
+            transition: all 0.2s ease;
+        }
+        
+        .option-label:hover {
+            background-color: #f8fafc;
+        }
+        
+        .option-label.selected {
+            background-color: #dbeafe;
+            border-color: #3b82f6;
+        }
+        
+        .section-tab {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-btn {
+            transition: all 0.2s ease;
+        }
+        
+        .nav-btn:hover {
+            transform: translateY(-1px);
+        }
+        
+        .tcs-shadow {
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        
+        .exam-timer {
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        .rule-badge {
+            font-size: 10px;
+            padding: 1px 7px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-slate-100">
+    
+    <!-- ============================================ -->
+    <!-- CANDIDATE INFORMATION FORM (TCS iON Style) -->
+    <!-- ============================================ -->
+    <div id="candidate-info-screen" class="min-h-screen flex items-center justify-center bg-slate-100 p-4">
+        <div class="w-full max-w-lg">
+            
+            <!-- TCS Header -->
+            <div class="flex justify-center mb-6">
+                <div class="flex items-center gap-x-3">
+                    <div class="w-14 h-14 bg-[#003366] rounded-2xl flex items-center justify-center shadow-lg">
+                        <span class="text-white font-black text-3xl tracking-tighter">TCS</span>
+                    </div>
+                    <div>
+                        <div class="font-bold text-3xl text-[#003366] tracking-tight">iON</div>
+                        <div class="text-[10px] text-slate-500 -mt-1 tracking-[3px]">EXAM PLATFORM</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Test Info Card -->
+            <div class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden">
+                
+                <!-- Header -->
+                <div class="bg-gradient-to-r from-[#003366] to-[#0055A4] px-8 py-5 text-white">
+                    <div class="text-center">
+                        <div class="text-xs tracking-[2px] text-blue-200 mb-1">PRACTICE TEST</div>
+                        <div class="font-bold text-2xl">TCS iON Exam Platform</div>
+                    </div>
+                </div>
+
+                <div class="p-8">
+                    
+                    <!-- Instructions -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 mb-6 text-xs text-slate-600">
+                        <div class="flex gap-2">
+                            <i class="fa-solid fa-info-circle text-[#003366] mt-0.5"></i>
+                            <div>
+                                This test follows exact <span class="font-semibold">TCS iON</span> exam pattern.<br>
+                                4 Sections • 115 Questions • Section-wise Timer (1 min per Q)<br>
+                                <span class="text-[#003366] font-medium">English MCQs</span> based on Rock Mechanics, RMR, Roof Supports &amp; Subsidence Notes
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Start Button -->
+                    <button onclick="startTest()"
+                            class="w-full py-4 bg-[#003366] hover:bg-[#002244] active:bg-black transition-all text-white font-bold text-lg rounded-2xl shadow-lg flex items-center justify-center gap-x-3">
+                        <span>START TEST</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <div class="text-center mt-4">
+                        <div class="text-[10px] text-slate-500">Total Duration: ~115 Minutes | 4 Sections</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-6 text-xs text-slate-500">
+                Prepared for Overman/Sirdar Exam | Rock Mechanics, Supports, Subsidence &amp; RMR
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- MAIN EXAM INTERFACE (Hidden initially) -->
+    <!-- ============================================ -->
+    <div id="exam-interface" style="display: none;">
+        
+        <!-- Top Header -->
+        <div class="tcs-header text-white shadow-lg">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="px-6 py-3 flex items-center justify-between">
+                <div class="flex items-center gap-x-4">
+                    <!-- TCS Logo -->
+                    <div class="flex items-center gap-x-2">
+                        <div class="w-10 h-10 bg-white rounded flex items-center justify-center">
+                            <span class="text-[#003366] font-black text-2xl tracking-tighter">TCS</span>
+                        </div>
+                        <div>
+                            <span class="font-bold text-xl tracking-tight">iON</span>
+                            <span class="text-xs font-medium tracking-[2px] block -mt-1">EXAM PLATFORM</span>
+                        </div>
+                    </div>
+                    
+                    <div class="h-6 w-px bg-white/30"></div>
+                    
+                </div>
+                
+                <div class="flex items-center gap-x-6">
+                    <!-- Timer -->
+                    <div class="bg-white/10 backdrop-blur px-4 py-1.5 rounded-xl flex items-center gap-x-2 border border-white/20">
+                        <i class="fa-solid fa-clock text-lg"></i>
+                        <div>
+                            <div class="text-[10px] text-blue-200 tracking-wider">TIME LEFT</div>
+                            <div id="timer-display" 
+                                 class="exam-timer text-2xl font-bold tabular-nums">75:00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="max-w-screen-2xl mx-auto px-4 pt-4 pb-8">
+        
+        <!-- Section Tabs -->
+        <div class="flex items-center justify-between mb-3 px-1">
+            <div class="flex items-center gap-x-1" id="section-tabs">
+                <!-- Populated by JS -->
+            </div>
+            
+            <div class="flex items-center gap-x-2 text-sm">
+                <div class="px-3 py-1 bg-white rounded-lg shadow-sm flex items-center gap-x-2 text-xs">
+                    <div class="flex items-center gap-x-1.5">
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        <span class="font-medium text-slate-600">Answered</span>
+                    </div>
+                    <div class="flex items-center gap-x-1.5">
+                        <div class="w-3 h-3 rounded-full bg-orange-500"></div>
+                        <span class="font-medium text-slate-600">Not Answered</span>
+                    </div>
+                    <div class="flex items-center gap-x-1.5">
+                        <div class="w-3 h-3 rounded-full bg-purple-500"></div>
+                        <span class="font-medium text-slate-600">Marked</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+            
+            <!-- Question Area -->
+            <div class="lg:col-span-8 bg-white rounded-2xl shadow tcs-shadow border border-slate-200 overflow-hidden">
+                
+                <!-- Question Header -->
+                <div class="px-6 py-3.5 bg-slate-50 border-b flex items-center justify-between">
+                    <div class="flex items-center gap-x-3">
+                        <div id="question-number-badge"
+                             class="px-4 py-1 bg-[#003366] text-white text-sm font-bold rounded-xl flex items-center gap-x-2">
+                            <span id="current-q-no">Q1</span>
+                            <span id="current-section-name" class="text-blue-200 text-xs font-normal">Section 1</span>
+                        </div>
+                        
+                        <div id="question-type-badge"
+                             class="px-3 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-700 flex items-center">
+                            <!-- JS populated -->
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center gap-x-2">
+                        <button onclick="markForReview()"
+                                class="px-4 py-1.5 text-xs font-semibold flex items-center gap-x-2 rounded-xl border border-purple-200 text-purple-700 hover:bg-purple-50 transition-colors">
+                            <i class="fa-solid fa-flag"></i>
+                            <span>Mark for Review</span>
+                        </button>
+                        
+                        <button onclick="clearResponse()"
+                                class="px-4 py-1.5 text-xs font-semibold flex items-center gap-x-2 rounded-xl border border-slate-200 text-slate-600 hover:bg-slate-50 transition-colors">
+                            <i class="fa-solid fa-eraser"></i>
+                            <span>Clear</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Question Content -->
+                <div class="p-6 question-container" id="question-area">
+                    <!-- Dynamically loaded by JS -->
+                </div>
+                
+                <!-- Navigation Footer -->
+                <div class="px-6 py-4 bg-slate-50 border-t flex items-center justify-between">
+                    <button onclick="prevQuestion()"
+                            class="nav-btn px-6 py-2.5 flex items-center gap-x-2 text-sm font-semibold rounded-2xl border border-slate-300 text-slate-700 hover:bg-white disabled:opacity-40"
+                            id="prev-btn">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <span>Previous</span>
+                    </button>
+                    
+                    <div class="flex items-center gap-x-2 text-xs text-slate-500">
+                        <span id="progress-text">1 of 25</span>
+                    </div>
+                    
+                    <button onclick="nextQuestion()"
+                            class="nav-btn px-7 py-2.5 flex items-center gap-x-2 text-sm font-semibold rounded-2xl bg-[#003366] text-white hover:bg-[#002244]"
+                            id="next-btn">
+                        <span>Next</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Question Palette -->
+            <div class="lg:col-span-4 bg-white rounded-2xl shadow tcs-shadow border border-slate-200 flex flex-col">
+                <div class="px-5 py-3.5 border-b flex items-center justify-between bg-slate-50 rounded-t-2xl">
+                    <div>
+                        <span class="font-bold text-slate-700">Question Palette</span>
+                    </div>
+                    <div class="text-xs px-2.5 py-0.5 bg-slate-200 text-slate-600 rounded font-mono" id="palette-progress">
+                        0/115
+                    </div>
+                </div>
+                
+                <div class="p-4 flex-1 overflow-auto question-palette" style="max-height: 460px;">
+                    <div id="palette-grid" class="grid grid-cols-5 gap-2.5">
+                        <!-- Populated dynamically by JS -->
+                    </div>
+                </div>
+                
+                <div class="p-4 border-t bg-slate-50 rounded-b-2xl">
+                    <button onclick="submitCurrentSection()"
+                            class="w-full py-3 text-sm font-bold bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl flex items-center justify-center gap-x-2 shadow-sm">
+                        <i class="fa-solid fa-check-double"></i>
+                        <span>SUBMIT SECTION</span>
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- Instructions Bar -->
+        <div class="mt-4 px-4 py-2.5 bg-white border border-slate-200 rounded-2xl text-xs flex items-center gap-x-4 text-slate-600">
+            <div class="flex items-center gap-x-1.5">
+                <i class="fa-solid fa-info-circle text-blue-500"></i>
+                <span class="font-medium">Instructions:</span>
+            </div>
+            <div class="flex-1 text-[11px]">
+                • Use <strong>Mark for Review</strong> for questions you want to revisit later &nbsp;•&nbsp; 
+                Timer is section-wise &nbsp;•&nbsp; 
+                You can navigate freely between questions
+            </div>
+        </div>
+        
+    </div>
+    
+    <!-- Final Summary Modal -->
+    <div id="summary-modal" class="hidden fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+        <div class="bg-white w-full max-w-2xl mx-4 rounded-3xl overflow-hidden shadow-2xl">
+            <div class="px-8 py-6 bg-gradient-to-r from-[#003366] to-[#0055A4] text-white">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold">Test Summary</h3>
+                    </div>
+                    <i onclick="closeSummary()" class="fa-solid fa-times text-2xl cursor-pointer hover:text-blue-200"></i>
+                </div>
+            </div>
+            
+            <div class="p-8">
+                <div class="grid grid-cols-3 gap-4 mb-6">
+                    <!-- Row 1 -->
+                    <div onclick="showCategoryReview('attempted')" class="bg-green-50 border border-green-200 rounded-2xl p-4 cursor-pointer hover:shadow-md active:scale-[0.985] transition-all">
+                        <div class="text-green-600 text-xs font-semibold tracking-wider flex items-center gap-x-1">
+                            <i class="fa-solid fa-check-double text-xs"></i> ATTEMPTED
+                        </div>
+                        <div id="summary-attempted" class="text-4xl font-black text-green-700 mt-1">0</div>
+                        <div class="text-[10px] text-green-600 mt-0.5">Click to review</div>
+                    </div>
+                    <div onclick="showCategoryReview('correct')" class="bg-emerald-50 border border-emerald-200 rounded-2xl p-4 cursor-pointer hover:shadow-md active:scale-[0.985] transition-all">
+                        <div class="text-emerald-600 text-xs font-semibold tracking-wider flex items-center gap-x-1">
+                            <i class="fa-solid fa-check text-xs"></i> CORRECT
+                        </div>
+                        <div id="summary-correct" class="text-4xl font-black text-emerald-700 mt-1">0</div>
+                        <div class="text-[10px] text-emerald-600 mt-0.5">Click to review</div>
+                    </div>
+                    <div onclick="showCategoryReview('wrong')" class="bg-red-50 border border-red-200 rounded-2xl p-4 cursor-pointer hover:shadow-md active:scale-[0.985] transition-all">
+                        <div class="text-red-600 text-xs font-semibold tracking-wider flex items-center gap-x-1">
+                            <i class="fa-solid fa-times text-xs"></i> WRONG
+                        </div>
+                        <div id="summary-wrong" class="text-4xl font-black text-red-600 mt-1">0</div>
+                        <div class="text-[10px] text-red-600 mt-0.5">Click to review</div>
+                    </div>
+                    
+                    <!-- Row 2 -->
+                    <div onclick="showCategoryReview('not-attempted')" class="bg-orange-50 border border-orange-200 rounded-2xl p-4 cursor-pointer hover:shadow-md active:scale-[0.985] transition-all">
+                        <div class="text-orange-600 text-xs font-semibold tracking-wider flex items-center gap-x-1">
+                            <i class="fa-solid fa-question text-xs"></i> NOT ATTEMPTED
+                        </div>
+                        <div id="summary-not-attempted" class="text-4xl font-black text-orange-600 mt-1">0</div>
+                        <div class="text-[10px] text-orange-600 mt-0.5">Click to review</div>
+                    </div>
+                    <div onclick="showCategoryReview('marked')" class="bg-purple-50 border border-purple-200 rounded-2xl p-4 cursor-pointer hover:shadow-md active:scale-[0.985] transition-all">
+                        <div class="text-purple-600 text-xs font-semibold tracking-wider flex items-center gap-x-1">
+                            <i class="fa-solid fa-flag text-xs"></i> MARKED FOR REVIEW
+                        </div>
+                        <div id="summary-marked" class="text-4xl font-black text-purple-700 mt-1">0</div>
+                        <div class="text-[10px] text-purple-600 mt-0.5">Click to review</div>
+                    </div>
+                    <div onclick="showCategoryReview('all')" class="bg-slate-50 border border-slate-200 rounded-2xl p-4 cursor-pointer hover:shadow-md active:scale-[0.985] transition-all">
+                        <div class="text-slate-600 text-xs font-semibold tracking-wider flex items-center gap-x-1">
+                            <i class="fa-solid fa-list text-xs"></i> TOTAL QUESTIONS
+                        </div>
+                        <div id="summary-total-questions" class="text-4xl font-black text-slate-700 mt-1">115</div>
+                        <div class="text-[10px] text-slate-600 mt-0.5">Click to review</div>
+                    </div>
+                </div>
+                
+                <div class="bg-[#003366] text-white rounded-2xl p-4 mb-6 text-center">
+                    <div class="text-xs tracking-[1px] text-blue-200">YOUR SCORE</div>
+                    <div class="flex items-baseline justify-center gap-x-2">
+                        <span id="summary-score" class="text-5xl font-black">0</span>
+                        <span class="text-2xl text-blue-200">/ <span id="summary-max-score">115</span></span>
+                    </div>
+                    <div id="summary-percentage" class="text-sm text-blue-200 mt-0.5">0% Accuracy</div>
+                </div>
+                
+                <div class="text-center">
+                    <button onclick="restartTest()"
+                            class="px-8 py-3 text-sm font-bold bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 rounded-2xl mr-3">
+                        <i class="fa-solid fa-redo mr-2"></i> RESTART TEST
+                    </button>
+                    <button onclick="finishAndShowAnswers()"
+                            class="px-8 py-3 text-sm font-bold bg-[#003366] hover:bg-[#002244] text-white rounded-2xl">
+                        VIEW DETAILED ANSWERS &amp; EXPLANATIONS
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // ==================== DATA: Questions (total auto-detected in summary) ====================
+                const examData = {
+    "sections": [
+        {
+            "id": 1,
+            "name": "Section 1",
+            "title": "Rock Classification, Stresses, Subsidence Basics & Immediate Roof (Q1-Q25)",
+            "timeMinutes": 25,
+            "questions": [
+                {
+                    "id": 1,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "According to the classification of rocks by bedding planes, rocks are classified as \"Massive\" when the bedding planes are at a distance of:",
+                    "options": [
+                        "Less than 75 mm",
+                        "Between 75 mm and 1.2 m",
+                        "Exactly 1.0 m",
+                        "More than 1.2 m"
+                    ],
+                    "correct": 3,
+                    "explanation": "Correct answer is D. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 2,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "Which of the following refers to the stress that remains even after the cause of the stress has been removed?",
+                    "options": [
+                        "Vertical stress",
+                        "Induced stress",
+                        "Residual stress",
+                        "Inherent stress"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 3,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "What is the approximate density of rocks in Indian coal mines?",
+                    "options": [
+                        "1.500 t/m³",
+                        "2.306 t/m³",
+                        "3.105 t/m³",
+                        "4.000 t/m³"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 4,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "The \"Immediate roof\" in a coal mine is generally considered to be up to what distance above the roof?",
+                    "options": [
+                        "2 meters",
+                        "3 meters",
+                        "6 meters",
+                        "10 meters"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 5,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "The pressure that exists in the strata before any mining activity has started is called:",
+                    "options": [
+                        "Abutment Pressure",
+                        "Virgin Pressure",
+                        "Shear Pressure",
+                        "Tensile Pressure"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 6,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "Where is \"Shear Pressure\" primarily developed after excavation?",
+                    "options": [
+                        "At the center of the excavation",
+                        "In the middle of the goaf",
+                        "Near the edges of the pillar and the jointing point of the excavated roof",
+                        "Only in the immediate floor"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 7,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "In the pressure arch theory, the vacuum space created by the sagging beds is referred to as:",
+                    "options": [
+                        "Inflexion space",
+                        "Weber's space/cavity",
+                        "Tensile dome",
+                        "Critical area"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 8,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "In Longwall (LW) mining, where is the Front Abutment pressure typically located?",
+                    "options": [
+                        "Exactly at the working face",
+                        "30m to 50m behind the face",
+                        "Slightly away from the face, usually half a pillar ahead or 3m to 10m ahead",
+                        "It disappears completely due to rock breaking"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 9,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "The compressive strength of sandstone is approximately:",
+                    "options": [
+                        "2.25 kg/sq.mm",
+                        "13.5 kg/sq.mm",
+                        "20.0 kg/sq.mm",
+                        "5.5 kg/sq.mm"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 10,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "Which test is used to measure the tensile strength of rocks?",
+                    "options": [
+                        "Compressive test",
+                        "Brazilian test",
+                        "Shear test",
+                        "Impact test"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 11,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "The angle made by the line joining the edge of the working and the edge of subsidence with the vertical is called the:",
+                    "options": [
+                        "Angle of draw",
+                        "Angle of break",
+                        "Angle of inflexion",
+                        "Critical angle"
+                    ],
+                    "correct": 0,
+                    "explanation": "Correct answer is A. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 12,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "The Subsidence factor is defined as the ratio of:",
+                    "options": [
+                        "Maximum possible subsidence to the depth of the seam",
+                        "Maximum possible subsidence to the mining height",
+                        "Mining height to the gallery width",
+                        "Angle of draw to the angle of break"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 13,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "What happens at the \"Point of inflexion\" during subsidence?",
+                    "options": [
+                        "Tensile stress is at its absolute maximum",
+                        "Compressive stress is at its absolute maximum",
+                        "Tensile strain changes into compressive strain (no compression or tension here)",
+                        "The surface cracks completely"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 14,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "An extraction area where maximum subsidence occurs at more than one point on the surface is known as a:",
+                    "options": [
+                        "Sub-critical area",
+                        "Super-critical area",
+                        "Critical area",
+                        "Virgin area"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 15,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "What is the safe limit of strain for subsidence in India?",
+                    "options": [
+                        "5 mm/m",
+                        "10 mm/m",
+                        "15 mm/m",
+                        "20 mm/m"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 16,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "Which theory of subsidence applies specifically to loose mediums like sand?",
+                    "options": [
+                        "Beam/Plate theory",
+                        "Dome theory",
+                        "Particulate theory",
+                        "Trough theory"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 17,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "Why must 0.6m of coal be left against a Shale roof?",
+                    "options": [
+                        "Because shale is extremely hard and damages drill bits",
+                        "Because shale disintegrates upon contact with water, making it a treacherous roof",
+                        "To increase the calorific value of the run-of-mine coal",
+                        "Because shale exerts very high lateral stress"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 18,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "What does RQD stand for in rock mass classification?",
+                    "options": [
+                        "Rock Quality Designation",
+                        "Rock Quantity Determination",
+                        "Roof Quality Dimension",
+                        "Rock Quotient Data"
+                    ],
+                    "correct": 0,
+                    "explanation": "Correct answer is A. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 19,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "An RQD value of 0-25% indicates that the rock quality is:",
+                    "options": [
+                        "Good",
+                        "Fair",
+                        "Very Poor",
+                        "Excellent"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 20,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "The RMR (Rock Mass Rating) system for immediate roof stability evaluates the roof up to what height above the gallery?",
+                    "options": [
+                        "1 meter",
+                        "2 meters",
+                        "3 meters",
+                        "6 meters"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 21,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "Which parameter carries the maximum rating (30 points) in the CMRS/ISM Geomechanics Classification for RMR?",
+                    "options": [
+                        "Structural features",
+                        "Layer thickness",
+                        "Rock weatherability",
+                        "Ground water seepage"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 22,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "If the RMR of a roof is 40 or less, which type of support is specifically recommended?",
+                    "options": [
+                        "Friction props",
+                        "Timber cogs",
+                        "Resin grouted bolts",
+                        "Steel arches"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 23,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "For continuous miner operations, how is the RMR value adjusted?",
+                    "options": [
+                        "Reduced by 10%",
+                        "Increased by 10%",
+                        "Reduced by 30%",
+                        "No adjustment (Nil)"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 24,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "According to the Paul Committee report, the length of a roof bolt should be at least what fraction of the gallery width?",
+                    "options": [
+                        "1/2",
+                        "1/3",
+                        "1/4",
+                        "2/3"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 25,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "At junctions, the bolting density should be increased by:",
+                    "options": [
+                        "10%",
+                        "25%",
+                        "50%",
+                        "100%"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Section 2",
+            "title": "RMR, Roof Bolting, Anchorage Testing & Support Capacities (Q26-Q55)",
+            "timeMinutes": 30,
+            "questions": [
+                {
+                    "id": 26,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "In anchorage testing of roof bolts, what percentage of installed bolts are subjected to a random pull test?",
+                    "options": [
+                        "1%",
+                        "5%",
+                        "10%",
+                        "20%"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 27,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "\"Quick setting\" for a roof bolt means it should develop an anchorage capacity of 10 KN in 30 minutes and approximately how much in 2 hours?",
+                    "options": [
+                        "20 KN",
+                        "30 KN",
+                        "50 KN",
+                        "100 KN"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 28,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "A roof bolt must not fail in a tensile test up to a minimum load of:",
+                    "options": [
+                        "10 tonnes",
+                        "12 tonnes",
+                        "16 tonnes",
+                        "20 tonnes"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 29,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "The diameter of the drilled hole for a roof bolt should not exceed the bolt's diameter by more than:",
+                    "options": [
+                        "2 to 5 mm",
+                        "8 to 12 mm",
+                        "15 to 20 mm",
+                        "25 mm"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 30,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "What type of prop setting is used in steep seams?",
+                    "options": [
+                        "Vertical",
+                        "Normal to the dip",
+                        "Underset Prop",
+                        "Horizontal"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 31,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "The minimum length of a cogging member (for heights up to 3m) should not be less than:",
+                    "options": [
+                        "1.0 m",
+                        "1.2 m",
+                        "1.5 m",
+                        "2.0 m"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 32,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "What is the load-bearing capacity of a Timber prop?",
+                    "options": [
+                        "1 to 2 tonnes",
+                        "5 to 6 tonnes",
+                        "10 to 12 tonnes",
+                        "15 to 20 tonnes"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 33,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "What is the load-bearing capacity of a Resin grouted roof bolt?",
+                    "options": [
+                        "5 to 6 tonnes",
+                        "8 to 12 tonnes",
+                        "12 to 18 tonnes",
+                        "20 to 30 tonnes"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 34,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "According to DGMS, the minimum load-bearing capacity of a Steel prop should be:",
+                    "options": [
+                        "10 tonnes",
+                        "20 tonnes",
+                        "30 tonnes",
+                        "40 tonnes"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 35,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "In a Yielding prop, the load at which the upper part of the prop starts to slide is called:",
+                    "options": [
+                        "Setting load",
+                        "Peak load",
+                        "Yield load",
+                        "Ultimate load"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 36,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "Which type of powered support has a caving shield attached to the rear but is unsuitable for weak roofs due to large gaps between the face and legs?",
+                    "options": [
+                        "Frame type",
+                        "Chock type",
+                        "Shield type",
+                        "Chock Shield type"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 37,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "In a Chock Shield support, what mechanism ensures that the roof piece moves parallel to the floor?",
+                    "options": [
+                        "Hydraulic ram",
+                        "Lemniscate linkage",
+                        "Suspension beam",
+                        "Friction wedge"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 38,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "In the Q-System formula for rock mass classification, what does \"Jn\" stand for?",
+                    "options": [
+                        "Joint roughness number",
+                        "Joint set number",
+                        "Joint alteration number",
+                        "Joint water reduction factor"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 39,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "In the Q-System, what does the term (Jr / Ja) represent?",
+                    "options": [
+                        "Block size",
+                        "Active stress",
+                        "Shear strength or nature of the rock",
+                        "Groundwater seepage"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 40,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "An RMR value of 60-80 falls under which Class of roof?",
+                    "options": [
+                        "Class I (Very Good)",
+                        "Class II (Good)",
+                        "Class III (Fair)",
+                        "Class IV (Poor)"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 41,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "An RMR value of 0-20 represents which class of roof?",
+                    "options": [
+                        "Class V (Very Poor)",
+                        "Class IV (Poor)",
+                        "Class III (Fair)",
+                        "Class II (Good)"
+                    ],
+                    "correct": 0,
+                    "explanation": "Correct answer is A. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 42,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "For calculating RMR adjustments, if the depth of workings is between 400m and 600m, the RMR is reduced by:",
+                    "options": [
+                        "10%",
+                        "20%",
+                        "30%",
+                        "It is increased by 10%"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 43,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "If there is a working above the current seam with a parting of 3m to 10m, the RMR can be reduced by up to:",
+                    "options": [
+                        "10%",
+                        "20%",
+                        "30%",
+                        "50%"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 44,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "What is the most accepted criterion for evaluating blast damage to underground workings?",
+                    "options": [
+                        "Frequency of vibration",
+                        "Peak Particle Velocity (PPV)",
+                        "Decibel level",
+                        "Air overpressure"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 45,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "Which of the following damage categories includes superficial cracks on pillars/roof and cracks in isolation stoppings?",
+                    "options": [
+                        "No appreciable damage",
+                        "Threshold damage",
+                        "Minor damage",
+                        "Major damage"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 46,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "Which part of the underground structure experiences a faster \"attenuation\" (weakening) of vibration?",
+                    "options": [
+                        "Floor",
+                        "Roof",
+                        "Pillar",
+                        "Coal face"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 47,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "A seismograph used for measuring blast vibrations underground should be capable of recording particle velocities up to:",
+                    "options": [
+                        "50 mm/s",
+                        "100 mm/s",
+                        "250 mm/s",
+                        "500 mm/s"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 48,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "Where is the seismograph transducer typically placed for taking observations in an underground mine?",
+                    "options": [
+                        "At the center of the goaf",
+                        "At the roof junction, or inside the pillar at 0.5 to 0.6m depth",
+                        "Inside the sump",
+                        "On the haulage track"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 49,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "For an RMR of 20-30, what is the Threshold PPV Value for a Pillar?",
+                    "options": [
+                        "20 mm/s",
+                        "30 mm/s",
+                        "50 mm/s",
+                        "100 mm/s"
+                    ],
+                    "correct": 0,
+                    "explanation": "Correct answer is A. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 50,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "For an RMR of 60-80, what is the Threshold PPV Value for the Roof?",
+                    "options": [
+                        "50 mm/s",
+                        "70 mm/s",
+                        "100 mm/s",
+                        "120 mm/s"
+                    ],
+                    "correct": 3,
+                    "explanation": "Correct answer is D. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 51,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "Which is the most common, cheap, and easily available support used in Indian mines?",
+                    "options": [
+                        "Steel arch",
+                        "Powered support",
+                        "Dry and seasoned Sal (Hind - Sakhua) timber",
+                        "Resin bolts"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 52,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "In metal mines, a timber prop is also commonly referred to as a:",
+                    "options": [
+                        "Stull",
+                        "Chock",
+                        "Cog",
+                        "Sprag"
+                    ],
+                    "correct": 0,
+                    "explanation": "Correct answer is A. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 53,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "The disease \"Dry rot\" in timber is caused by:",
+                    "options": [
+                        "High temperature",
+                        "Fungus attack",
+                        "Excessive water pressure",
+                        "Termites"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 54,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "Which type of timber is highly susceptible to both Dry and Wet rot?",
+                    "options": [
+                        "Seasoned timber",
+                        "Chemically treated timber",
+                        "Unseasoned timber (Green timber)",
+                        "Bamboo"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 55,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "According to the \"Suspension Theory\" of roof bolting, the dead weight of the loose strata is transferred to:",
+                    "options": [
+                        "The immediate floor",
+                        "The side pillars",
+                        "An upper strong anchor layer",
+                        "The wire mesh"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Section 3",
+            "title": "Powered Supports, Q-System, Blast Vibration & Timber Supports (Q56-Q85)",
+            "timeMinutes": 30,
+            "questions": [
+                {
+                    "id": 56,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "Which roof bolting theory works by binding multiple layers of strata together to increase frictional effect and prevent tensile failure?",
+                    "options": [
+                        "Beam Building (Beam theory)",
+                        "Arching Action",
+                        "Keying Effect",
+                        "Suspension Theory"
+                    ],
+                    "correct": 0,
+                    "explanation": "Correct answer is A. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 57,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "The \"Keying Effect\" (Keystone Theory) is highly useful when the roof strata is:",
+                    "options": [
+                        "Massive and unbroken",
+                        "Extremely blocky and fractured",
+                        "Composed of pure sandstone",
+                        "Highly wet and muddy"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 58,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "The main objective of the \"Arching Action\" theory in roof bolting is to:",
+                    "options": [
+                        "Suspend the roof like a pendulum",
+                        "Increase the compressive stress value in the roof to ignore tensile stress",
+                        "Create a void for gas accumulation",
+                        "Allow the roof to sag up to 2 meters"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 59,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "In the Arching Action theory, what is recommended to support the weak zones between the bolts?",
+                    "options": [
+                        "Timber cogs",
+                        "Hydraulic props",
+                        "Wire mesh and Shotcrete",
+                        "Steel girders"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 60,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "The width that can be extracted without causing any movement on the surface is called:",
+                    "options": [
+                        "Sub-critical width",
+                        "Critical width",
+                        "Non Effective Width (NEW)",
+                        "Super-critical width"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 61,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "What is the approximate value of the Non Effective Width (NEW) in India relative to the depth of extraction?",
+                    "options": [
+                        "0.1 to 0.2 times the depth",
+                        "0.3 to 1.17 times the depth",
+                        "1.5 to 2.0 times the depth",
+                        "2.5 times the depth"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 62,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "In subsidence control, \"Harmonic mining\" is a technique where:",
+                    "options": [
+                        "Only 10% of the coal is extracted",
+                        "The tensile stress of one seam neutralizes the compressive stress of another",
+                        "Mining is done only during rainy seasons",
+                        "The goaf is completely stowed with sand"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 63,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "According to the notes, flaggy rocks have bedding planes at a distance of:",
+                    "options": [
+                        "Less than 75 mm",
+                        "75 mm to 1.2 m",
+                        "1.2 m to 2.0 m",
+                        "More than 2.0 m"
+                    ],
+                    "correct": 0,
+                    "explanation": "Correct answer is A. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 64,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "The inherent stress in rocks is caused by:",
+                    "options": [
+                        "The weight of upper layers only",
+                        "Excavation of galleries",
+                        "Natural causes like folding, faulting, and igneous intrusions",
+                        "Blasting operations"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 65,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "Which stress acts at right angles to the burden stress and is significantly lesser than the vertical stress?",
+                    "options": [
+                        "Residual stress",
+                        "Lateral stress",
+                        "Shear stress",
+                        "Tensile stress"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 66,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "Tensile stress in an excavation is maximum at the:",
+                    "options": [
+                        "Center of the excavation",
+                        "Corner points",
+                        "Immediate floor",
+                        "Goaf edge"
+                    ],
+                    "correct": 0,
+                    "explanation": "Correct answer is A. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 67,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "In a narrow Longwall face, the pressure arch is:",
+                    "options": [
+                        "Extremely massive",
+                        "Similar to that in Bord & Pillar (B&P)",
+                        "Non-existent",
+                        "Only located in the floor"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 68,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "A rock's ability to resist deformation caused by slippage parallel to the applied tension is defined as its:",
+                    "options": [
+                        "Compressive strength",
+                        "Tensile strength",
+                        "Shear stress/strength",
+                        "Weatherability"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 69,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "The compressive strength of coal is approximately:",
+                    "options": [
+                        "1.00 kg/sq.mm",
+                        "2.25 kg/sq.mm",
+                        "13.5 kg/sq.mm",
+                        "20.0 kg/sq.mm"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 70,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "What is the value of the constant 'K' in the strain formula (Strain = K * Smax / H) for India?",
+                    "options": [
+                        "0.5",
+                        "1",
+                        "1.5",
+                        "2.0"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 71,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "In RMR classification, what is the maximum rating given to Ground water seepage?",
+                    "options": [
+                        "10",
+                        "15",
+                        "20",
+                        "30"
+                    ],
+                    "correct": 0,
+                    "explanation": "Correct answer is A. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 72,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "In RMR classification, what is the maximum rating given to the Strength of the roof rock?",
+                    "options": [
+                        "10",
+                        "15",
+                        "20",
+                        "25"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 73,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "If the gallery span is between 4.5m and 6.0m, how is the RMR adjusted?",
+                    "options": [
+                        "It is increased by 10%",
+                        "It is reduced by 10-20%",
+                        "It is reduced by 30%",
+                        "There is no change"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 74,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "The minimum length of a roof bolt should generally not be less than:",
+                    "options": [
+                        "0.5 meters",
+                        "1.0 meters",
+                        "1.5 meters",
+                        "2.0 meters"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 75,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "For a \"Fair\" roof, what is the recommended bolting density?",
+                    "options": [
+                        "0.7 bolts/sqm",
+                        "1.0 bolts/sqm",
+                        "1.2 to 1.5 bolts/sqm",
+                        "2.0 bolts/sqm"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 76,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "For a \"Poor\" roof, what is the recommended bolting density?",
+                    "options": [
+                        "0.7 bolts/sqm",
+                        "1.0 bolts/sqm",
+                        "1.2 to 1.5 bolts/sqm",
+                        "0.5 bolts/sqm"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 77,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "What percentage of installed roof bolts are subjected to destructive testing?",
+                    "options": [
+                        "1%",
+                        "5%",
+                        "10%",
+                        "15%"
+                    ],
+                    "correct": 0,
+                    "explanation": "Correct answer is A. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 78,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "The anchorage testing of roof bolts must be done under the supervision of:",
+                    "options": [
+                        "The Mining Mate",
+                        "The Assistant Manager / Under Manager (Bolting-Overman)",
+                        "The General Manager only",
+                        "The Chief Inspector of Mines"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 79,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "The bearing plate for a roof bolt should be flat under a minimum load of:",
+                    "options": [
+                        "5 tonnes",
+                        "10 tonnes",
+                        "14 tonnes",
+                        "20 tonnes"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 80,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "Roof bolts should not show any deterioration when subjected to an accelerated weathering test for:",
+                    "options": [
+                        "5 days",
+                        "10 days",
+                        "20 days",
+                        "30 days"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 81,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "For a timber prop setting, the LID dimension should not be less than:",
+                    "options": [
+                        "25cm x 5cm x Prop dia",
+                        "50cm x 8cm x Prop dia",
+                        "75cm x 10cm x Prop dia",
+                        "100cm x 15cm x Prop dia"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 82,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "What is the required setting load for vertical supports to prevent them from dislodging due to blasting?",
+                    "options": [
+                        "Minimum 2 tonnes",
+                        "Minimum 5 tonnes",
+                        "Minimum 10 tonnes",
+                        "Minimum 15 tonnes"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 83,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "In Safari clamps/cross bar supports, what should be the minimum depth of the side hole?",
+                    "options": [
+                        "10 cm",
+                        "30 cm",
+                        "50 cm",
+                        "100 cm"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 84,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "According to DGMS, what is the minimum load-bearing capacity required for an Iron chock?",
+                    "options": [
+                        "10 tonnes",
+                        "20 tonnes",
+                        "30 tonnes",
+                        "40 tonnes"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 85,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "What is the load-bearing capacity of a Timber chock?",
+                    "options": [
+                        "5 to 10 tonnes",
+                        "10 to 20 tonnes",
+                        "20 to 30 tonnes",
+                        "30 to 40 tonnes"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Section 4",
+            "title": "Advanced Supports, PPV Thresholds & Numerical Problems (Q86-Q115)",
+            "timeMinutes": 30,
+            "questions": [
+                {
+                    "id": 86,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "What is the load-bearing capacity of a Steel arch?",
+                    "options": [
+                        "10 to 15 tonnes",
+                        "15 to 20 tonnes",
+                        "20 to 25 tonnes",
+                        "30 to 40 tonnes"
+                    ],
+                    "correct": 3,
+                    "explanation": "Correct answer is D. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 87,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "In powered supports, the setting load is typically kept high at what percentage to resist lateral pressure from roof machinery?",
+                    "options": [
+                        "30% or more",
+                        "50% or more",
+                        "70% or more",
+                        "90% or more"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 88,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "In the 6 stages of powered support (Portnov, 1972), stage 5 represents:",
+                    "options": [
+                        "Pressure drop due to valve closure",
+                        "Decelerated convergence",
+                        "Peak load (sharp increase when the cutter loader passes)",
+                        "Pressure drop upon releasing the prop"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 89,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "In the Q-System, what does the (Jw / SRF) parameter represent?",
+                    "options": [
+                        "Active stress",
+                        "Block size",
+                        "Shear strength",
+                        "RQD"
+                    ],
+                    "correct": 0,
+                    "explanation": "Correct answer is A. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 90,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "Under the Q-System classification, a Q-value of 10 to 40 denotes the rock mass quality as:",
+                    "options": [
+                        "Poor",
+                        "Fair",
+                        "Good",
+                        "Very good"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 91,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "If lateral stress in a mine is \"High\", the RMR value is adjusted by:",
+                    "options": [
+                        "Reducing by 10%",
+                        "Reducing by 20%",
+                        "Reducing by 30%",
+                        "Increasing by 10%"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 92,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "If there is adjacent working in the same seam with an extraction of 20-40m, the RMR is reduced by:",
+                    "options": [
+                        "10%",
+                        "20%",
+                        "30%",
+                        "Nil"
+                    ],
+                    "correct": 0,
+                    "explanation": "Correct answer is A. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 93,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "The method of excavation known as \"Undercut and blasting\" requires what adjustment to the RMR?",
+                    "options": [
+                        "Increase by 10%",
+                        "Reduce by 10%",
+                        "Reduce by 20%",
+                        "Nil (No adjustment)"
+                    ],
+                    "correct": 3,
+                    "explanation": "Correct answer is D. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 94,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "In opencast blasting near underground workings, the frequency of vibration has:",
+                    "options": [
+                        "A major impact on underground mines",
+                        "No significant impact on underground mines",
+                        "A moderate impact only on pillars",
+                        "An impact only if the RMR is above 80"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 95,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "For analyzing seismograph data, the Regression analysis method used is:",
+                    "options": [
+                        "Highest peak method",
+                        "Least mean square method and Square root scaling law",
+                        "Simple moving average",
+                        "Standard deviation law"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 96,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "Which of the following is a factor affecting Peak Particle Velocity (PPV)?",
+                    "options": [
+                        "Type and quantity of explosive",
+                        "Distance from the blast site",
+                        "Geological and structural properties of the rock",
+                        "All of the above"
+                    ],
+                    "correct": 3,
+                    "explanation": "Correct answer is D. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 97,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "Regarding blast damage, which part of the underground working is more susceptible to cracking than the galleries?",
+                    "options": [
+                        "The goaf edges",
+                        "The junctions",
+                        "The solid coal pillars",
+                        "The floor"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 98,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "For an RMR of 40-50, the Threshold PPV Value for the Roof is:",
+                    "options": [
+                        "50-70 mm/s",
+                        "70-100 mm/s",
+                        "100-120 mm/s",
+                        "120 mm/s"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 99,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "Seasoning of timber helps to evaporate which component, thereby preventing fungus attack?",
+                    "options": [
+                        "Lignin",
+                        "Sap",
+                        "Bark",
+                        "Cellulose"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 100,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "If the gallery height is 1.2m to 1.5m, the recommended diameter for Sal props at the thick end is:",
+                    "options": [
+                        "50 mm to 75 mm",
+                        "100 mm to 125 mm",
+                        "150 mm to 175 mm",
+                        "175 mm to 225 mm"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 101,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "What is the approximate vertical stress at a depth of 200 meters?",
+                    "options": [
+                        "10 kg/sq.cm",
+                        "20 kg/sq.cm",
+                        "40 kg/sq.cm",
+                        "60 kg/sq.cm"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 102,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "What will be the approximate vertical stress at a depth of 500 meters?",
+                    "options": [
+                        "50 kg/sq.cm",
+                        "100 kg/sq.cm",
+                        "150 kg/sq.cm",
+                        "200 kg/sq.cm"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 103,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "In a 2-meter core run (200 cm), the lengths of core pieces greater than 10 cm are 15 cm, 25 cm, 12 cm, 30 cm, and 18 cm. What is the Rock Quality Designation (RQD)?",
+                    "options": [
+                        "25%",
+                        "50%",
+                        "75%",
+                        "100%"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 104,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "The unadjusted RMR of a roof is evaluated at 50. If the workings are at a depth of 450m, what will be the adjusted RMR considering only the depth factor?",
+                    "options": [
+                        "35",
+                        "40",
+                        "45",
+                        "50"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 105,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "An initial RMR calculation yields 60. The working involves a continuous miner and a gallery span of 5.0m. Applying these two adjustment factors, what is the final approximate RMR?",
+                    "options": [
+                        "48",
+                        "54",
+                        "59",
+                        "66"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 106,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "A coal seam gallery has a width of 4.8 meters. According to the Paul Committee report, what should be the absolute minimum length of the roof bolt used?",
+                    "options": [
+                        "1.2 m",
+                        "1.5 m",
+                        "1.6 m",
+                        "2.0 m"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 107,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "A gallery is 4.2 meters wide. What is the required minimum roof bolt length?",
+                    "options": [
+                        "1.2 m",
+                        "1.4 m",
+                        "1.5 m",
+                        "1.8 m"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 108,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "A junction has a \"Fair\" roof requiring a base bolting density of 1.0 bolts/sqm. What must be the bolting density at this junction?",
+                    "options": [
+                        "1.00 bolts/sqm",
+                        "1.10 bolts/sqm",
+                        "1.25 bolts/sqm",
+                        "1.50 bolts/sqm"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 109,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "During a Brazilian test, a rock specimen fails at a load (F) of 3140 kg. The specimen has a diameter (D) of 10 cm and a length (L) of 5 cm. Using π ≈ 3.14, what is its tensile strength?",
+                    "options": [
+                        "20 kg/sq.cm",
+                        "40 kg/sq.cm",
+                        "60 kg/sq.cm",
+                        "80 kg/sq.cm"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 110,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "In a subsidence calculation for an Indian mine (K=1), the maximum subsidence (Smax) is 1.5 meters and the depth of the seam (H) is 150 meters. What is the strain in mm/m?",
+                    "options": [
+                        "5 mm/m",
+                        "10 mm/m",
+                        "15 mm/m",
+                        "20 mm/m"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 111,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "Based on Indian standards for Non Effective Width (NEW), if a mine is at a depth of 200m, what is the maximum possible width that can be extracted without surface movement?",
+                    "options": [
+                        "60 meters",
+                        "100 meters",
+                        "150 meters",
+                        "234 meters"
+                    ],
+                    "correct": 3,
+                    "explanation": "Correct answer is D. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 112,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "A cement capsule used for roof bolting develops 3 tonnes of anchorage after 30 minutes, 5 tonnes after 2 hours, and 10 tonnes after 24 hours. What will be its strength after 28 days?",
+                    "options": [
+                        "10 tonnes",
+                        "12 tonnes",
+                        "15 tonnes",
+                        "20 tonnes"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 113,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "A bearing plate (dome washer plate) for a roof bolt has dimensions of 150mm × 150mm × 8mm. What is the surface area of the flat square face of this plate?",
+                    "options": [
+                        "1200 sq.mm",
+                        "22500 sq.mm",
+                        "30000 sq.mm",
+                        "150000 sq.mm"
+                    ],
+                    "correct": 1,
+                    "explanation": "Correct answer is B. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 114,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "If a gallery height is 2.0 meters, what is the required diameter of the Sal props to be used?",
+                    "options": [
+                        "50 mm to 100 mm",
+                        "100 mm to 125 mm",
+                        "150 mm to 175 mm",
+                        "175 mm to 225 mm"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                },
+                {
+                    "id": 115,
+                    "type": "mcq",
+                    "rule": "Rock Mechanics, Supports, Subsidence & RMR / Overman's Handbook Notes",
+                    "question": "A support system offers a total Support Resistance of 45 tonnes/m². The calculated Rock Load is 15 tonnes/m². What is the Safety Factor?",
+                    "options": [
+                        "1.5",
+                        "2.0",
+                        "3.0",
+                        "4.5"
+                    ],
+                    "correct": 2,
+                    "explanation": "Correct answer is C. As per the provided notes on Rock Mechanics, Roof Supports, Subsidence and RMR."
+                }
+            ]
+        }
+    ]
+};
+        
+        // ==================== STATE MANAGEMENT ====================
+        let currentSection = 0;
+        let currentQuestion = 0;
+        let userAnswers = {}; // {sectionIndex: {qIndex: answer}}
+        let markedForReview = {}; // {sectionIndex: {qIndex: true}}
+        let visited = {}; // {sectionIndex: {qIndex: true}}
+        let sectionTimers = {};
+        let timerInterval = null;
+        let testSubmitted = false;
+        
+        // Initialize state
+        function initState() {
+            examData.sections.forEach((section, sIdx) => {
+                userAnswers[sIdx] = {};
+                markedForReview[sIdx] = {};
+                visited[sIdx] = {};
+                sectionTimers[sIdx] = section.timeMinutes * 60;
+            });
+        }
+        
+        // ==================== TIMER ====================
+        function startSectionTimer() {
+            clearInterval(timerInterval);
+            
+            const timeLeft = sectionTimers[currentSection];
+            updateTimerDisplay(timeLeft);
+            
+            timerInterval = setInterval(() => {
+                sectionTimers[currentSection]--;
+                updateTimerDisplay(sectionTimers[currentSection]);
+                
+                if (sectionTimers[currentSection] <= 0) {
+                    clearInterval(timerInterval);
+                    alert("Section time is over! Submitting current section automatically.");
+                    submitCurrentSection(true);
+                }
+            }, 1000);
+        }
+        
+        function updateTimerDisplay(seconds) {
+            const min = Math.floor(seconds / 60);
+            const sec = seconds % 60;
+            const display = `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
+            document.getElementById('timer-display').innerHTML = display;
+            
+            // Warning color
+            const timerEl = document.getElementById('timer-display');
+            if (seconds < 120) {
+                timerEl.classList.add('text-red-400');
+            } else {
+                timerEl.classList.remove('text-red-400');
+            }
+        }
+        
+        // ==================== RENDER SECTION TABS ====================
+        function renderSectionTabs() {
+            const container = document.getElementById('section-tabs');
+            container.innerHTML = '';
+            
+            examData.sections.forEach((section, idx) => {
+                const btn = document.createElement('button');
+                btn.className = `section-tab px-5 py-2 text-sm font-semibold rounded-2xl flex items-center gap-x-2 transition-all ${idx === currentSection ? 
+                    'bg-[#003366] text-white shadow' : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'}`;
+                
+                btn.innerHTML = `
+                    <span>${section.name}</span>
+                    <span class="text-xs px-1.5 py-0.5 rounded ${idx === currentSection ? 'bg-white/20' : 'bg-slate-100'}">${section.questions.length}Q</span>
+                `;
+                
+                btn.onclick = () => {
+                    if (idx !== currentSection) {
+                        // Auto save current
+                        saveCurrentAnswer();
+                        currentSection = idx;
+                        currentQuestion = 0;
+                        renderCurrentQuestion();
+                        renderPalette();
+                        renderSectionTabs();
+                        startSectionTimer();
+                    }
+                };
+                
+                container.appendChild(btn);
+            });
+        }
+        
+        // ==================== RENDER QUESTION ====================
+        function renderCurrentQuestion() {
+            const section = examData.sections[currentSection];
+            const q = section.questions[currentQuestion];
+            const qArea = document.getElementById('question-area');
+            
+            // Mark as visited
+            if (!visited[currentSection]) visited[currentSection] = {};
+            visited[currentSection][currentQuestion] = true;
+            
+            let html = `
+                <div class="mb-2 flex items-center gap-x-2">
+                    <span class="rule-badge bg-slate-100 text-slate-600 font-mono">${q.rule}</span>
+                </div>
+                <div class="text-lg font-semibold text-slate-800 leading-snug mb-5">${q.question}</div>
+            `;
+            
+            if (q.type === "mcq") {
+                html += `<div class="space-y-2.5">`;
+                q.options.forEach((opt, idx) => {
+                    const isSelected = userAnswers[currentSection] && userAnswers[currentSection][currentQuestion] === idx;
+                    html += `
+                        <label onclick="selectMCQ(${idx})" 
+                               class="option-label flex items-start gap-x-3 p-4 border rounded-2xl cursor-pointer ${isSelected ? 'selected border-blue-500' : 'border-slate-200'}">
+                            <div class="mt-0.5">
+                                <input type="radio" name="q${q.id}" ${isSelected ? 'checked' : ''} class="accent-[#003366]">
+                            </div>
+                            <div class="flex-1 text-[15px] text-slate-700">${opt}</div>
+                        </label>
+                    `;
+                });
+                html += `</div>`;
+            } 
+            else if (q.type === "msq") {
+                html += `<div class="text-xs text-orange-600 mb-2 font-medium">⚡ Multiple answers can be correct</div>`;
+                html += `<div class="space-y-2.5">`;
+                q.options.forEach((opt, idx) => {
+                    const selectedAnswers = userAnswers[currentSection] && userAnswers[currentSection][currentQuestion] ? userAnswers[currentSection][currentQuestion] : [];
+                    const isSelected = selectedAnswers.includes(idx);
+                    html += `
+                        <label onclick="toggleMSQ(${idx})" 
+                               class="option-label flex items-start gap-x-3 p-4 border rounded-2xl cursor-pointer ${isSelected ? 'selected border-blue-500' : 'border-slate-200'}">
+                            <div class="mt-0.5">
+                                <input type="checkbox" ${isSelected ? 'checked' : ''} class="accent-[#003366]">
+                            </div>
+                            <div class="flex-1 text-[15px] text-slate-700">${opt}</div>
+                        </label>
+                    `;
+                });
+                html += `</div>`;
+            } 
+            else if (q.type === "numerical") {
+                const currentVal = userAnswers[currentSection] && userAnswers[currentSection][currentQuestion] ? userAnswers[currentSection][currentQuestion] : '';
+                html += `
+                    <div class="mt-2">
+                        <div class="text-xs text-slate-500 mb-1.5">Enter the number:</div>
+                        <input type="text" id="numerical-input" value="${currentVal}" 
+                               oninput="saveNumericalAnswer()"
+                               class="w-full px-5 py-4 text-xl font-semibold border-2 border-slate-300 focus:border-[#003366] rounded-2xl outline-none">
+                    </div>
+                `;
+            }
+            
+            qArea.innerHTML = html;
+            
+            // Update badges
+            document.getElementById('current-q-no').innerText = `Q${q.id}`;
+            document.getElementById('current-section-name').innerText = section.name;
+            
+            const typeBadge = document.getElementById('question-type-badge');
+            if (q.type === "mcq") {
+                typeBadge.innerHTML = `<i class="fa-solid fa-check-circle mr-1"></i> Single Correct`;
+                typeBadge.className = `px-3 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-700 flex items-center`;
+            } else if (q.type === "msq") {
+                typeBadge.innerHTML = `<i class="fa-solid fa-tasks mr-1"></i> Multiple Select`;
+                typeBadge.className = `px-3 py-1 text-xs font-semibold rounded-full bg-orange-100 text-orange-700 flex items-center`;
+            } else if (q.type === "numerical") {
+                typeBadge.innerHTML = `<i class="fa-solid fa-calculator mr-1"></i> Numerical`;
+                typeBadge.className = `px-3 py-1 text-xs font-semibold rounded-full bg-emerald-100 text-emerald-700 flex items-center`;
+            }
+            
+            // Progress
+            document.getElementById('progress-text').innerText = `${currentQuestion + 1} of ${section.questions.length}`;
+            
+            // Enable/disable nav buttons
+            document.getElementById('prev-btn').disabled = currentQuestion === 0;
+            document.getElementById('next-btn').innerHTML = currentQuestion === section.questions.length - 1 ? 
+                `Finish Section <i class="fa-solid fa-check ml-2"></i>` : `Next <i class="fa-solid fa-arrow-right ml-2"></i>`;
+            
+            updatePalette();
+        }
+        
+        // ==================== ANSWER HANDLING ====================
+        function selectMCQ(optionIndex) {
+            if (!userAnswers[currentSection]) userAnswers[currentSection] = {};
+            userAnswers[currentSection][currentQuestion] = optionIndex;
+            renderCurrentQuestion();
+            updatePalette();
+        }
+        
+        function toggleMSQ(optionIndex) {
+            if (!userAnswers[currentSection]) userAnswers[currentSection] = {};
+            if (!userAnswers[currentSection][currentQuestion]) userAnswers[currentSection][currentQuestion] = [];
+            
+            let answers = userAnswers[currentSection][currentQuestion];
+            const idx = answers.indexOf(optionIndex);
+            
+            if (idx > -1) {
+                answers.splice(idx, 1);
+            } else {
+                answers.push(optionIndex);
+            }
+            
+            renderCurrentQuestion();
+            updatePalette();
+        }
+        
+        function saveNumericalAnswer() {
+            const input = document.getElementById('numerical-input');
+            if (!input) return;
+            
+            if (!userAnswers[currentSection]) userAnswers[currentSection] = {};
+            userAnswers[currentSection][currentQuestion] = input.value.trim();
+            updatePalette();
+        }
+        
+        function saveCurrentAnswer() {
+            // For numerical, already saved on input
+            // MCQ/MSQ already saved on click
+        }
+        
+        function clearResponse() {
+            if (!userAnswers[currentSection]) userAnswers[currentSection] = {};
+            delete userAnswers[currentSection][currentQuestion];
+            
+            if (markedForReview[currentSection]) {
+                delete markedForReview[currentSection][currentQuestion];
+            }
+            
+            renderCurrentQuestion();
+            updatePalette();
+        }
+        
+        function markForReview() {
+            if (!markedForReview[currentSection]) markedForReview[currentSection] = {};
+            markedForReview[currentSection][currentQuestion] = true;
+            updatePalette();
+            
+            // Visual feedback
+            const btns = document.querySelectorAll('.option-label');
+            btns.forEach(b => b.style.transition = 'all 0.1s');
+        }
+        
+        // ==================== PALETTE ====================
+        function updatePalette() {
+            const container = document.getElementById('palette-grid');
+            container.innerHTML = '';
+            
+            const section = examData.sections[currentSection];
+            const totalQ = section.questions.length;
+            
+            let answeredCount = 0;
+            
+            for (let i = 0; i < totalQ; i++) {
+                const btn = document.createElement('button');
+                btn.className = `palette-btn rounded-xl text-sm font-bold`;
+                
+                let status = 'not-visited';
+                let label = i + 1;
+                
+                const isAnswered = userAnswers[currentSection] && userAnswers[currentSection][i] !== undefined && 
+                                   (Array.isArray(userAnswers[currentSection][i]) ? userAnswers[currentSection][i].length > 0 : true);
+                
+                const isMarked = markedForReview[currentSection] && markedForReview[currentSection][i];
+                const isVisited = visited[currentSection] && visited[currentSection][i];
+                
+                if (isAnswered && isMarked) {
+                    status = 'answered-marked';
+                } else if (isAnswered) {
+                    status = 'answered';
+                    answeredCount++;
+                } else if (isMarked) {
+                    status = 'marked';
+                } else if (isVisited) {
+                    status = 'not-answered';
+                }
+                
+                btn.classList.add(status);
+                btn.innerText = label;
+                
+                if (i === currentQuestion) {
+                    btn.style.boxShadow = '0 0 0 3px #003366';
+                    btn.style.transform = 'scale(1.05)';
+                }
+                
+                btn.onclick = () => {
+                    saveCurrentAnswer();
+                    currentQuestion = i;
+                    renderCurrentQuestion();
+                    updatePalette();
+                };
+                
+                container.appendChild(btn);
+            }
+            
+            // Update progress text
+            document.getElementById('palette-progress').innerText = `${answeredCount}/${totalQ}`;
+        }
+        
+        function renderPalette() {
+            updatePalette();
+        }
+        
+        // ==================== NAVIGATION ====================
+        function nextQuestion() {
+            saveCurrentAnswer();
+            
+            const section = examData.sections[currentSection];
+            
+            if (currentQuestion < section.questions.length - 1) {
+                currentQuestion++;
+                renderCurrentQuestion();
+                updatePalette();
+            } else {
+                // Last question of section
+                if (confirm("यह Section की अंतिम प्रश्न है। क्या आप Section submit करना चाहते हैं?")) {
+                    submitCurrentSection();
+                }
+            }
+        }
+        
+        function prevQuestion() {
+            saveCurrentAnswer();
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                renderCurrentQuestion();
+                updatePalette();
+            }
+        }
+        
+        // ==================== SUBMIT SECTION ====================
+        function submitCurrentSection(auto = false) {
+            clearInterval(timerInterval);
+            
+            const section = examData.sections[currentSection];
+            let answered = 0;
+            let marked = 0;
+            
+            section.questions.forEach((_, idx) => {
+                if (userAnswers[currentSection] && userAnswers[currentSection][idx] !== undefined) {
+                    const ans = userAnswers[currentSection][idx];
+                    if (Array.isArray(ans) ? ans.length > 0 : true) answered++;
+                }
+                if (markedForReview[currentSection] && markedForReview[currentSection][idx]) marked++;
+            });
+            
+            if (!auto && answered < section.questions.length) {
+                if (!confirm(`आपने इस section के ${answered}/${section.questions.length} प्रश्नों के उत्तर दिए हैं।\nMarked for Review: ${marked}\n\nक्या आप वाकई submit करना चाहते हैं?`)) {
+                    startSectionTimer();
+                    return;
+                }
+            }
+            
+            // Move to next section or finish
+            if (currentSection < examData.sections.length - 1) {
+                currentSection++;
+                currentQuestion = 0;
+                renderSectionTabs();
+                renderCurrentQuestion();
+                renderPalette();
+                startSectionTimer();
+            } else {
+                // All sections done
+                showFinalSummary();
+            }
+        }
+        
+        // ==================== FINAL SUMMARY ====================
+        function showFinalSummary() {
+            testSubmitted = true;
+            clearInterval(timerInterval);
+            
+            let totalAnswered = 0;
+            let totalMarked = 0;
+            let totalQuestions = 0;
+            let correctCount = 0;
+            let wrongCount = 0;
+            
+            examData.sections.forEach((section, sIdx) => {
+                totalQuestions += section.questions.length;
+                section.questions.forEach((q, qIdx) => {
+                    const userAns = userAnswers[sIdx] ? userAnswers[sIdx][qIdx] : undefined;
+                    
+                    if (userAns !== undefined) {
+                        const ans = userAns;
+                        if (Array.isArray(ans) ? ans.length > 0 : true) {
+                            totalAnswered++;
+                            
+                            // Check if correct
+                            let isCorrect = false;
+                            if (q.type === "mcq") {
+                                isCorrect = userAns === q.correct;
+                            } else if (q.type === "msq" && Array.isArray(userAns)) {
+                                isCorrect = JSON.stringify(userAns.sort()) === JSON.stringify(q.correct.sort());
+                            } else if (q.type === "numerical") {
+                                isCorrect = userAns.toString().trim() === q.correct.toString();
+                            }
+                            
+                            if (isCorrect) {
+                                correctCount++;
+                            } else {
+                                wrongCount++;
+                            }
+                        }
+                    }
+                    
+                    if (markedForReview[sIdx] && markedForReview[sIdx][qIdx]) totalMarked++;
+                });
+            });
+            
+            const notAttempted = totalQuestions - totalAnswered;
+            const percentage = totalAnswered > 0 ? Math.round((correctCount / totalAnswered) * 100) : 0;
+            
+            // Update summary UI
+            document.getElementById('summary-attempted').innerText = totalAnswered;
+            document.getElementById('summary-not-attempted').innerText = notAttempted;
+            document.getElementById('summary-marked').innerText = totalMarked;
+            document.getElementById('summary-correct').innerText = correctCount;
+            document.getElementById('summary-wrong').innerText = wrongCount;
+            document.getElementById('summary-score').innerText = correctCount;
+            document.getElementById('summary-percentage').innerText = `${percentage}% Accuracy`;
+            document.getElementById('summary-total-questions').innerText = totalQuestions;
+            document.getElementById('summary-max-score').innerText = totalQuestions;
+            
+            document.getElementById('summary-modal').classList.remove('hidden');
+            document.getElementById('summary-modal').classList.add('flex');
+        }
+        
+        function closeSummary() {
+            document.getElementById('summary-modal').classList.remove('flex');
+            document.getElementById('summary-modal').classList.add('hidden');
+        }
+        
+        function finishAndShowAnswers() {
+            closeSummary();
+            showDetailedAnswers();
+        }
+        
+        function showDetailedAnswers() {
+            const container = document.createElement('div');
+            container.className = `fixed inset-0 bg-black/70 flex items-center justify-center z-[60] p-4`;
+            
+            let html = `
+                <div class="bg-white w-full max-w-5xl max-h-[92vh] rounded-3xl overflow-hidden flex flex-col">
+                    <div class="px-8 py-5 bg-[#003366] text-white flex justify-between items-center">
+                        <div>
+                            <span class="font-bold text-xl">Detailed Answers &amp; Explanations</span>
+                            <span class="ml-3 text-xs bg-white/20 px-3 py-1 rounded">For Self-Assessment</span>
+                        </div>
+                        <button onclick="this.closest('.fixed').remove()" class="text-white text-2xl hover:text-red-300">×</button>
+                    </div>
+                    
+                    <div class="overflow-auto p-6 flex-1 bg-slate-50" style="max-height: calc(92vh - 140px)">
+            `;
+            
+            let qNo = 1;
+            examData.sections.forEach((section, sIdx) => {
+                html += `<div class="mb-8"><div class="font-bold text-lg mb-3 text-[#003366] sticky top-0 bg-slate-50 py-1">${section.name} — ${section.title}</div>`;
+                
+                section.questions.forEach((q, qIdx) => {
+                    const userAns = userAnswers[sIdx] ? userAnswers[sIdx][qIdx] : undefined;
+                    let isCorrect = false;
+                    
+                    if (q.type === "mcq" && userAns !== undefined) {
+                        isCorrect = userAns === q.correct;
+                    } else if (q.type === "msq" && Array.isArray(userAns)) {
+                        isCorrect = JSON.stringify(userAns.sort()) === JSON.stringify(q.correct.sort());
+                    } else if (q.type === "numerical" && userAns !== undefined) {
+                        isCorrect = userAns.toString().trim() === q.correct.toString();
+                    }
+                    
+                    const statusColor = isCorrect ? 'green' : (userAns !== undefined ? 'red' : 'slate');
+                    
+                    html += `
+                        <div class="mb-5 bg-white border border-slate-200 rounded-2xl p-5">
+                            <div class="flex gap-x-3">
+                                <div class="font-mono text-xs px-2.5 h-fit py-0.5 rounded bg-slate-100 text-slate-500">${q.rule}</div>
+                                <div class="flex-1">
+                                    <div class="font-semibold text-slate-800">${qNo}. ${q.question}</div>
+                                    
+                                    <div class="mt-3 text-sm">
+                    `;
+                    
+                    if (q.type === "mcq") {
+                        q.options.forEach((opt, idx) => {
+                            let cls = '';
+                            if (idx === q.correct) cls = 'text-green-700 font-semibold';
+                            if (userAns === idx && idx !== q.correct) cls = 'text-red-600 line-through';
+                            
+                            html += `<div class="flex items-center gap-x-2 py-0.5 ${cls}">
+                                <span class="font-mono text-xs w-5">${String.fromCharCode(65+idx)}.</span> 
+                                <span>${opt}</span>
+                                ${idx === q.correct ? '<i class="fa-solid fa-check text-green-500 ml-1"></i>' : ''}
+                            </div>`;
+                        });
+                    } else if (q.type === "msq") {
+                        q.options.forEach((opt, idx) => {
+                            const userSelected = Array.isArray(userAns) && userAns.includes(idx);
+                            const isCorrectOpt = q.correct.includes(idx);
+                            
+                            let cls = '';
+                            if (isCorrectOpt) cls = 'text-green-700 font-semibold';
+                            if (userSelected && !isCorrectOpt) cls = 'text-red-600 line-through';
+                            
+                            html += `<div class="flex items-center gap-x-2 py-0.5 ${cls}">
+                                <span class="font-mono text-xs w-5">${String.fromCharCode(65+idx)}.</span> 
+                                <span>${opt}</span>
+                                ${isCorrectOpt ? '<i class="fa-solid fa-check text-green-500 ml-1"></i>' : ''}
+                            </div>`;
+                        });
+                    } else if (q.type === "numerical") {
+                        html += `<div class="mt-1">
+                            <span class="text-xs text-slate-500">Your Answer:</span> 
+                            <span class="font-semibold ${isCorrect ? 'text-green-600' : 'text-red-600'}">${userAns || 'Not Answered'}</span><br>
+                            <span class="text-xs text-slate-500">Correct Answer:</span> 
+                            <span class="font-semibold text-green-700">${q.correct}</span>
+                        </div>`;
+                    }
+                    
+                    html += `</div>
+                            <div class="mt-4 text-xs bg-slate-50 border-l-4 border-[#003366] pl-3 py-2 text-slate-600">${q.explanation}</div>
+                        </div></div></div>`;
+                    
+                    qNo++;
+                });
+                
+                html += `</div>`;
+            });
+            
+            html += `</div></div>`;
+            container.innerHTML = html;
+            document.body.appendChild(container);
+        }
+        
+        // ==================== CATEGORY REVIEW (Clickable Summary Cards) ====================
+        function showCategoryReview(category) {
+            closeSummary();
+            
+            let filteredQuestions = [];
+            let categoryTitle = '';
+            let categoryIcon = '';
+            let categoryColor = 'slate';
+            
+            examData.sections.forEach((section, sIdx) => {
+                section.questions.forEach((q, qIdx) => {
+                    const userAns = userAnswers[sIdx] ? userAnswers[sIdx][qIdx] : undefined;
+                    const isMarked = markedForReview[sIdx] && markedForReview[sIdx][qIdx];
+                    
+                    let isCorrect = false;
+                    let isAttempted = false;
+                    
+                    if (userAns !== undefined) {
+                        if (Array.isArray(userAns) ? userAns.length > 0 : true) {
+                            isAttempted = true;
+                            
+                            if (q.type === "mcq") {
+                                isCorrect = userAns === q.correct;
+                            } else if (q.type === "msq" && Array.isArray(userAns)) {
+                                isCorrect = JSON.stringify(userAns.sort()) === JSON.stringify(q.correct.sort());
+                            } else if (q.type === "numerical") {
+                                isCorrect = userAns.toString().trim() === q.correct.toString();
+                            }
+                        }
+                    }
+                    
+                    let include = false;
+                    
+                    if (category === 'all') include = true;
+                    else if (category === 'correct' && isAttempted && isCorrect) include = true;
+                    else if (category === 'wrong' && isAttempted && !isCorrect) include = true;
+                    else if (category === 'attempted' && isAttempted) include = true;
+                    else if (category === 'not-attempted' && !isAttempted) include = true;
+                    else if (category === 'marked' && isMarked) include = true;
+                    
+                    if (include) {
+                        filteredQuestions.push({
+                            sectionIdx: sIdx,
+                            qIdx: qIdx,
+                            sectionName: section.name,
+                            sectionTitle: section.title,
+                            question: q,
+                            userAns: userAns,
+                            isCorrect: isCorrect,
+                            isMarked: isMarked
+                        });
+                    }
+                });
+            });
+            
+            // Set title based on category
+            if (category === 'all') {
+                categoryTitle = `All Questions (${filteredQuestions.length})`;
+                categoryIcon = 'fa-list-ul';
+                categoryColor = 'slate';
+            } else if (category === 'correct') {
+                categoryTitle = `Correct Answers (${filteredQuestions.length})`;
+                categoryIcon = 'fa-check-circle';
+                categoryColor = 'emerald';
+            } else if (category === 'wrong') {
+                categoryTitle = `Wrong Answers (${filteredQuestions.length})`;
+                categoryIcon = 'fa-times-circle';
+                categoryColor = 'red';
+            } else if (category === 'attempted') {
+                categoryTitle = `Attempted Questions (${filteredQuestions.length})`;
+                categoryIcon = 'fa-check-double';
+                categoryColor = 'green';
+            } else if (category === 'not-attempted') {
+                categoryTitle = `Not Attempted (${filteredQuestions.length})`;
+                categoryIcon = 'fa-question-circle';
+                categoryColor = 'orange';
+            } else if (category === 'marked') {
+                categoryTitle = `Marked for Review (${filteredQuestions.length})`;
+                categoryIcon = 'fa-flag';
+                categoryColor = 'purple';
+            }
+            
+            const container = document.createElement('div');
+            container.className = `fixed inset-0 bg-black/70 flex items-center justify-center z-[70] p-4`;
+            
+            let html = `
+                <div class="bg-white w-full max-w-5xl max-h-[92vh] rounded-3xl overflow-hidden flex flex-col">
+                    <div class="px-8 py-5 bg-[#003366] text-white flex justify-between items-center">
+                        <div class="flex items-center gap-x-3">
+                            <i class="fa-solid ${categoryIcon} text-2xl text-${categoryColor}-400"></i>
+                            <div>
+                                <span class="font-bold text-xl">${categoryTitle}</span>
+                                <span class="ml-3 text-xs bg-white/20 px-3 py-1 rounded">Review Mode</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-x-2">
+                            <button onclick="this.closest('.fixed').remove(); document.getElementById('summary-modal').classList.remove('hidden'); document.getElementById('summary-modal').classList.add('flex');" 
+                                    class="px-4 py-1.5 text-sm bg-white/10 hover:bg-white/20 rounded-xl flex items-center gap-x-2">
+                                <i class="fa-solid fa-arrow-left"></i> 
+                                <span>Back to Summary</span>
+                            </button>
+                            <button onclick="this.closest('.fixed').remove()" class="text-white text-3xl leading-none hover:text-red-300 px-2">×</button>
+                        </div>
+                    </div>
+                    
+                    <div class="overflow-auto p-6 flex-1 bg-slate-50" style="max-height: calc(92vh - 140px)">
+            `;
+            
+            if (filteredQuestions.length === 0) {
+                html += `
+                    <div class="flex flex-col items-center justify-center py-16 text-center">
+                        <i class="fa-solid ${categoryIcon} text-6xl text-slate-300 mb-4"></i>
+                        <div class="text-xl font-semibold text-slate-600">No questions in this category</div>
+                        <div class="text-sm text-slate-500 mt-1">Great job! Keep practicing.</div>
+                    </div>
+                `;
+            } else {
+                filteredQuestions.forEach((item, index) => {
+                    const q = item.question;
+                    const userAns = item.userAns;
+                    const isCorrect = item.isCorrect;
+                    const qNoGlobal = (item.sectionIdx * 10) + (item.qIdx + 1); // Approximate global number
+                    
+                    html += `
+                        <div class="mb-6 bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+                            <div class="flex items-start gap-x-3">
+                                <div class="font-mono text-xs px-2.5 h-fit py-0.5 rounded bg-slate-100 text-slate-500 flex-shrink-0 mt-0.5">${q.rule}</div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center gap-x-2 mb-1">
+                                        <span class="font-bold text-slate-700">Q${qNoGlobal}</span>
+                                        <span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">${item.sectionName}</span>
+                                        ${item.isMarked ? '<span class="text-xs px-2 py-0.5 rounded-full bg-purple-100 text-purple-700"><i class="fa-solid fa-flag mr-1"></i>Marked</span>' : ''}
+                                    </div>
+                                    
+                                    <div class="font-semibold text-slate-800 mb-3">${q.question}</div>
+                    `;
+                    
+                    // Options rendering (same logic as detailed answers)
+                    if (q.type === "mcq") {
+                        html += `<div class="space-y-1 text-sm">`;
+                        q.options.forEach((opt, idx) => {
+                            let cls = 'text-slate-700';
+                            let icon = '';
+                            
+                            if (idx === q.correct) {
+                                cls = 'text-green-700 font-semibold';
+                                icon = '<i class="fa-solid fa-check text-green-500 ml-1.5"></i>';
+                            }
+                            if (userAns === idx && idx !== q.correct) {
+                                cls = 'text-red-600 line-through';
+                            }
+                            
+                            html += `
+                                <div class="flex items-center gap-x-2 py-1 px-2 rounded ${cls}">
+                                    <span class="font-mono text-xs w-5 flex-shrink-0">${String.fromCharCode(65+idx)}.</span> 
+                                    <span class="flex-1">${opt}</span>
+                                    ${icon}
+                                </div>
+                            `;
+                        });
+                        html += `</div>`;
+                    } else if (q.type === "msq") {
+                        html += `<div class="space-y-1 text-sm">`;
+                        q.options.forEach((opt, idx) => {
+                            const userSelected = Array.isArray(userAns) && userAns.includes(idx);
+                            const isCorrectOpt = q.correct.includes(idx);
+                            
+                            let cls = 'text-slate-700';
+                            let icon = '';
+                            
+                            if (isCorrectOpt) {
+                                cls = 'text-green-700 font-semibold';
+                                icon = '<i class="fa-solid fa-check text-green-500 ml-1.5"></i>';
+                            }
+                            if (userSelected && !isCorrectOpt) {
+                                cls = 'text-red-600 line-through';
+                            }
+                            
+                            html += `
+                                <div class="flex items-center gap-x-2 py-1 px-2 rounded ${cls}">
+                                    <span class="font-mono text-xs w-5 flex-shrink-0">${String.fromCharCode(65+idx)}.</span> 
+                                    <span class="flex-1">${opt}</span>
+                                    ${icon}
+                                </div>
+                            `;
+                        });
+                        html += `</div>`;
+                    } else if (q.type === "numerical") {
+                        html += `
+                            <div class="mt-2 p-3 bg-slate-50 rounded-xl text-sm">
+                                <div><span class="text-xs text-slate-500">Your Answer:</span> <span class="font-semibold ${isCorrect ? 'text-green-600' : 'text-red-600'}">${userAns || 'Not Answered'}</span></div>
+                                <div class="mt-1"><span class="text-xs text-slate-500">Correct Answer:</span> <span class="font-semibold text-green-700">${q.correct}</span></div>
+                            </div>
+                        `;
+                    }
+                    
+                    html += `
+                                    <div class="mt-4 text-xs bg-slate-50 border-l-4 border-[#003366] pl-3 py-2 text-slate-600">
+                                        ${q.explanation}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+            
+            html += `
+                    </div>
+                    
+                    <div class="px-8 py-4 border-t bg-white flex justify-between items-center">
+                        <div class="text-xs text-slate-500">
+                            Click on any card in Summary to filter questions
+                        </div>
+                        <button onclick="this.closest('.fixed').remove(); document.getElementById('summary-modal').classList.remove('hidden'); document.getElementById('summary-modal').classList.add('flex');"
+                                class="px-5 py-2 text-sm font-semibold bg-[#003366] text-white rounded-2xl flex items-center gap-x-2 hover:bg-[#002244]">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            <span>Back to Summary</span>
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            container.innerHTML = html;
+            document.body.appendChild(container);
+        }
+        
+        function restartTest() {
+            if (confirm("क्या आप पूरा टेस्ट restart करना चाहते हैं? सारी progress मिट जाएगी।")) {
+                location.reload();
+            }
+        }
+
+        // ==================== CANDIDATE INFO HANDLER ====================
+        function startTest() {
+            // Defaults since name and language chooser removed for clean UI
+            const nameInput = "TINKU";
+            const selectedLang = "Hinglish";
+
+            // Store in global variables
+            window.candidateName = nameInput;
+            window.selectedLanguage = selectedLang;
+
+            // Hide candidate screen, show exam
+            document.getElementById('candidate-info-screen').style.display = 'none';
+            document.getElementById('exam-interface').style.display = 'block';
+
+            // Initialize the exam
+            initializeExam();
+
+            // Show simple start toast (no language badge since removed)
+            setTimeout(() => {
+                const startToast = document.createElement('div');
+                startToast.className = `fixed bottom-5 left-5 bg-white shadow-xl border px-4 py-2.5 rounded-2xl text-sm flex items-center gap-x-2 z-50`;
+                startToast.innerHTML = `
+                    <div class="text-[#003366]"><i class="fa-solid fa-play"></i></div>
+                    <div class="text-xs">Test started successfully. Good luck!</div>
+                `;
+                document.body.appendChild(startToast);
+                setTimeout(() => startToast.remove(), 2200);
+            }, 800);
+        }
+        
+        // ==================== INITIALIZE ====================
+        function initializeExam() {
+            initState();
+            renderSectionTabs();
+            renderCurrentQuestion();
+            renderPalette();
+            startSectionTimer();
+            
+            // Keyboard shortcuts
+            document.addEventListener('keydown', function(e) {
+                if (testSubmitted) return;
+                
+                if (e.key === "ArrowRight") {
+                    nextQuestion();
+                } else if (e.key === "ArrowLeft") {
+                    prevQuestion();
+                } else if (e.key.toLowerCase() === "m") {
+                    markForReview();
+                } else if (e.key.toLowerCase() === "c") {
+                    clearResponse();
+                }
+            });
+            
+            // Welcome toast
+            setTimeout(() => {
+                const toast = document.createElement('div');
+                toast.className = `fixed bottom-5 right-5 bg-white shadow-xl border px-5 py-3 rounded-2xl text-sm flex items-center gap-x-3 z-40`;
+                toast.innerHTML = `
+                    <div class="text-emerald-600"><i class="fa-solid fa-info-circle"></i></div>
+                    <div class="text-xs">Tip: Press <span class="font-mono bg-slate-100 px-1.5 rounded">M</span> to Mark for Review &nbsp;•&nbsp; <span class="font-mono bg-slate-100 px-1.5 rounded">C</span> to Clear</div>
+                `;
+                document.body.appendChild(toast);
+                setTimeout(() => toast.remove(), 4200);
+            }, 6500);
+            
+            console.log('%c[TCS iON Simulator] Rock Mechanics Supports Subsidence (115 Qs, 25+30+30+30) for TINKU.', 'color:#64748b');
+        }
+        
+        // Boot - We call initializeExam manually after candidate form
+        // window.onload = initializeExam;   // Disabled - now called from startTest()
+    </script>
+    
+    </div> <!-- End of #exam-interface -->
+</body>
+</html>

@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>TCS iON Ultra Pro Mock Test - EMT Chapter 3 (Part 1)</title>
+    
+    <style>
+        :root {
+            --bg: #f0f2f5;
+            --surface: #ffffff;
+            --text: #333333;
+            --text-muted: #555555;
+            --border: #e0e0e0;
+            --primary: #007bff;
+            --success: #28a745;
+            --danger: #dc3545;
+            --warning: #ffeb3b;
+            --info: #17a2b8;
+            --purple: #6f42c1;
+            --header-bg: #232f3e;
+            --header-text: #ffffff;
+        }
+        
+        [data-theme="dark"] {
+            --bg: #121212;
+            --surface: #1e1e1e;
+            --text: #e0e0e0;
+            --text-muted: #aaaaaa;
+            --border: #333333;
+            --header-bg: #1f1f1f;
+            --header-text: #e0e0e0;
+        }
+
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; padding-bottom: 120px; background-color: var(--bg); color: var(--text); transition: background 0.3s, color 0.3s; overflow-x: hidden; }
+        
+        #gt-container { position: fixed; top: 15px; right: 15px; z-index: 1000000; background: var(--surface); padding: 5px 10px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); border: 1px solid var(--border); }
+        .goog-te-banner-frame.skiptranslate { display: none !important; }
+        body { top: 0px !important; }
+        .goog-tooltip { display: none !important; }
+        .goog-tooltip:hover { display: none !important; }
+        .goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; }
+        
+        #landing-page { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--bg); z-index: 10000; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 80px 20px 20px 20px; overflow-y: auto; }
+        #landing-page h1 { font-size: 2.5rem; margin-bottom: 5px; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; }
+        #landing-page p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 20px; max-width: 600px; }
+        
+        .settings-panel { background: var(--surface); padding: 25px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border: 1px solid var(--border); text-align: left; margin-bottom: 25px; width: 100%; max-width: 500px; }
+        .settings-panel h3 { margin-top: 0; border-bottom: 2px solid var(--border); padding-bottom: 10px; color: var(--text); }
+        .setting-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; font-weight: bold; color: var(--text); }
+        .setting-row select, .setting-row input[type="number"] { padding: 8px; border-radius: 5px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 1rem; width: 150px; outline: none; }
+        .setting-row input[type="checkbox"] { transform: scale(1.5); cursor: pointer; }
+        
+        .btn-large { padding: 15px 40px; font-size: 1.2rem; background: var(--success); color: #fff; border: none; border-radius: 8px; cursor: box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-weight: bold; text-transform: uppercase; transition: transform 0.1s, opacity 0.2s; }
+        .btn-large:hover { opacity: 0.9; transform: translateY(-2px); }
+        
+        .history-landing { margin-top: 30px; background: var(--surface); padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border: 1px solid var(--border); width: 100%; max-width: 800px; }
+        
+        #pause-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.95); z-index: 99999; flex-direction: column; align-items: center; justify-content: center; color: white; }
+        #pause-overlay h2 { font-size: 3rem; margin-bottom: 20px; color: var(--warning); }
+        
+        .header { background-color: var(--header-bg); color: var(--header-text); padding: 12px 20px; display: none; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1); flex-wrap: wrap; gap: 10px; }
+        .header h1 { margin: 0; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; }
+        .header-right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding-right: 180px; }
+        .timer { font-weight: bold; font-size: 1.1rem; color: var(--warning); border: 1px solid var(--warning); padding: 4px 8px; border-radius: 4px; display: flex; align-items: center; gap: 5px; }
+        
+        .tools-row { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 6px; }
+        .tool-btn { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; }
+        .tool-btn:hover { background: rgba(255,255,255,0.2); }
+        
+        #calculator { position: fixed; top: 80px; right: 20px; background: var(--surface); border: 1px solid var(--border); box-shadow: 0 4px 15px rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; z-index: 9999; display: none; width: 220px; }
+        #calc-display { width: 100%; box-sizing: border-box; padding: 10px; font-size: 1.2rem; text-align: right; margin-bottom: 10px; border: 1px solid var(--border); background: var(--bg); color: var(--text); border-radius: 4px; outline: none; }
+        .calc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; }
+        .calc-grid button { padding: 10px 5px; font-size: 1rem; border: 1px solid var(--border); background: var(--surface); color: var(--text); cursor: pointer; border-radius: 4px; font-weight: bold; }
+        .calc-grid button:hover { background: var(--bg); }
+        .calc-grid .btn-c { background: var(--danger); color: white; border: none; }
+        
+        .container { display: none; flex-direction: column; padding: 15px; max-width: 1200px; margin: auto; gap: 20px; }
+        @media(min-width: 768px) { .container { flex-direction: row; } }
+        
+        .q-section { flex: 3; background: var(--surface); padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid var(--border); display: flex; flex-direction: column; }
+        .q-title { font-size: 1.1rem; font-weight: bold; margin-bottom: 15px; border-bottom: 2px solid var(--border); padding-bottom: 10px; display: flex; justify-content: space-between; align-items: center; color: var(--text); flex-wrap: wrap; gap: 10px; }
+        
+        .q-tools { display: flex; gap: 10px; flex-wrap: wrap; }
+        .q-tool-btn { background: var(--bg); color: var(--text); border: 1px solid var(--border); padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 0.9rem; font-weight: bold; transition: 0.2s; }
+        .q-tool-btn:hover { background: var(--primary); color: #fff; }
+        
+        .q-text { font-size: 16px; font-weight: bold; line-height: 1.6; margin-bottom: 20px; transition: font-size 0.2s; }
+        
+        .options-list { list-style: none; padding: 0; margin: 0; font-size: 16px; transition: font-size 0.2s; flex: 1; }
+        .options-list li { margin-bottom: 12px; }
+        .options-list label { display: flex; align-items: center; padding: 15px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; transition: background 0.2s; position: relative; }
+        .options-list label:hover { background: var(--bg); }
+        .options-list input[type="radio"] { margin-right: 15px; transform: scale(1.4); cursor: pointer; }
+        .shortcut-badge { position: absolute; right: 15px; font-size: 0.8rem; background: var(--border); padding: 2px 6px; border-radius: 4px; color: var(--text-muted); opacity: 0.7; }
+        
+        .note-container { margin-top: 20px; display: none; }
+        .note-textarea { width: 100%; box-sizing: border-box; padding: 10px; border-radius: 5px; border: 1px solid var(--border); background: var(--bg); color: var(--text); resize: vertical; min-height: 60px; font-family: inherit; }
+        
+        /* NEW ERROR BANNER STYLES */
+        .error-banner { background: #f8d7da; color: #721c24; padding: 15px; border-radius: 8px; margin-bottom: 20px; font-weight: bold; border: 2px solid #f5c6cb; text-align: center; font-size: 1.1rem; }
+        .error-flagged-content { opacity: 0.4; pointer-events: none; user-select: none; filter: grayscale(100%); }
+        
+        .palette-section { flex: 1; background: var(--surface); padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid var(--border); height: max-content; }
+        .palette-title { font-weight: bold; text-align: center; margin-bottom: 15px; font-size: 1.1rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+        .palette-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(38px, 1fr)); gap: 8px; max-height: 300px; overflow-y: auto; padding-right: 5px; }
+        .p-btn { width: 100%; aspect-ratio: 1; border-radius: 50%; border: 1px solid var(--border); background: var(--surface); font-weight: bold; cursor: pointer; font-size: 0.9rem; padding: 0; color: var(--text); position: relative; transition: 0.2s;}
+        .p-btn.active { border: 3px solid var(--primary); box-shadow: 0 0 5px rgba(0,123,255,0.5); }
+        .p-btn.ans { background: var(--success); color: #fff; border-color: var(--success); }
+        .p-btn.not-ans { background: var(--danger); color: #fff; border-color: var(--danger); }
+        .p-btn.marked { background: var(--purple); color: #fff; border-color: var(--purple); }
+        .p-btn.ans-marked { background: var(--purple); color: #fff; border-color: var(--purple); }
+        .p-btn.ans-marked::after { content: '✔'; position: absolute; bottom: -2px; right: -2px; color: var(--success); font-size: 10px; background: white; border-radius: 50%; width: 14px; height: 14px; display: flex; align-items: center; justify-content: center; }
+        .p-btn.has-note::before { content: '📝'; position: absolute; top: -5px; right: -5px; font-size: 10px; }
+        
+        /* NEW ERROR FLAG BUTTON STYLE */
+        .p-btn.error-flag { background: #343a40 !important; color: white !important; border: 2px dashed #dc3545 !important; opacity: 0.8; }
+        .p-btn.error-flag::after { content: '🚩'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 20px; opacity: 0.4; }
+        
+        .legend-box { display:inline-block; width:14px; height:14px; border-radius:50%; margin-right:5px; vertical-align: middle; }
+        .legend-item { margin-bottom: 8px; font-size: 0.85rem; display: flex; align-items: center; color: var(--text-muted); }
+        
+        .fixed-footer { position: fixed; bottom: 0; left: 0; right: 0; background: var(--surface); box-shadow: 0 -4px 10px rgba(0,0,0,0.1); padding: 12px 15px; display: none; flex-wrap: wrap; gap: 10px; justify-content: space-between; align-items: center; z-index: 999; border-top: 1px solid var(--border); }
+        .left-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+        .right-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+        
+        .btn { padding: 10px 16px; font-size: 0.95rem; font-weight: bold; border: none; border-radius: 5px; cursor: pointer; color: #fff; transition: opacity 0.2s; white-space: nowrap; }
+        .btn:hover { opacity: 0.9; }
+        .btn:disabled { background: var(--border) !important; color: var(--text-muted) !important; cursor: not-allowed; }
+        
+        .btn-clear { background: #f39c12; }
+        .btn-mark { background: var(--purple); }
+        .btn-prev { background: #6c757d; }
+        .btn-next { background: var(--primary); }
+        .btn-submit { background: var(--success); }
+        
+        /* Analysis Section */
+        .analysis { display: none; padding: 20px; max-width: 1200px; margin: auto; }
+        
+        .score-banner { background: var(--surface); padding: 25px; border-radius: 8px; border: 1px solid var(--border); text-align: center; margin-bottom: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .score-banner h2 { margin: 0 0 10px 0; color: var(--text); font-size: 2rem; }
+        .score-banner p { margin: 0; font-size: 1.1rem; color: var(--text-muted); }
+        .final-marks { font-size: 3.5rem; font-weight: bold; color: var(--primary); margin: 10px 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
+        
+        .charts-container { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; margin-bottom: 25px; background: var(--surface); padding: 20px; border-radius: 8px; border: 1px solid var(--border); }
+        .pie-chart { width: 160px; height: 160px; border-radius: 50%; background: conic-gradient(var(--success) 0% 0%, var(--danger) 0% 0%, var(--text-muted) 0% 100%); box-shadow: 0 4px 10px rgba(0,0,0,0.1); border: 2px solid var(--border); }
+        .chart-legend { display: flex; flex-direction: column; gap: 10px; font-size: 1.1rem; color: var(--text); font-weight: bold; }
+        
+        .cards { display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 25px; }
+        .card { flex: 1; min-width: 120px; padding: 20px; border-radius: 8px; color: #fff; text-align: center; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.2s; }
+        .card:hover { transform: translateY(-3px); }
+        .card.active { outline: 4px solid var(--text); outline-offset: 2px; }
+        .c-tot { background: var(--info); }
+        .c-cor { background: var(--success); }
+        .c-inc { background: var(--danger); }
+        .c-un { background: #6c757d; }
+        .card h2 { margin: 0 0 5px 0; font-size: 2.2rem; }
+        
+        .review-box { background: var(--surface); border-radius: 8px; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border: 1px solid var(--border); }
+        .r-item { padding: 15px; margin-bottom: 15px; border-radius: 6px; border: 1px solid var(--border); background: var(--bg); }
+        .r-cor { border-left: 6px solid var(--success); }
+        .r-inc { border-left: 6px solid var(--danger); }
+        .r-un { border-left: 6px solid #6c757d; }
+        .r-err { border-left: 6px solid #343a40; opacity: 0.6; }
+        .r-q { font-weight: bold; margin-bottom: 10px; font-size: 1.1rem; color: var(--text); }
+        .r-a { margin: 5px 0; font-size: 1rem; color: var(--text-muted); }
+        .r-n { margin-top: 10px; padding: 10px; background: rgba(111,66,193,0.1); border-left: 4px solid var(--purple); font-style: italic; color: var(--text); border-radius: 4px;}
+        .time-badge { display: inline-block; font-size: 0.8rem; background: rgba(0,0,0,0.1); padding: 3px 8px; border-radius: 12px; margin-top: 5px; color: var(--text); font-weight: bold; }
+        
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; text-align: left; color: var(--text); }
+        th, td { padding: 12px; border-bottom: 1px solid var(--border); }
+        th { background: var(--bg); }
+        .hist-btn { background: var(--primary); color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.9rem; }
+        .hist-btn:hover { opacity: 0.9; }
+        
+        @media print {
+            .header, .fixed-footer, .palette-section, .history-landing, #btn-restart, .cards, #gt-container, .tool-btn { display: none !important; }
+            .analysis { display: block !important; padding: 0; }
+            body { background: #fff; color: #000; }
+            .r-item { break-inside: avoid; border: 1px solid #ccc; }
+        }
+        
+        #google_translate_element select { padding: 6px; font-size: 14px; border-radius: 4px; max-width: 120px; outline: none; }
+    </style>
+
+    <!-- MathJax Configuration and Script -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['\\(', '\\)'], ['$', '$']],
+          displayMath: [['\\[', '\\]'], ['$$', '$$']]
+        },
+        svg: {
+          fontCache: 'global'
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+
+    <!-- FIXED GOOGLE TRANSLATE CONTAINER ALWAYS VISIBLE (RESTORED) -->
+    <div id="gt-container">
+        <div id="google_translate_element"></div>
+    </div>
+
+    <!-- LANDING PAGE / SETTINGS -->
+    <div id="landing-page" class="notranslate">
+        <h1>TCS iON Ultra Pro</h1>
+        <p>EMT Chapter 3 (Part 1) - Custom Mock Test</p>
+        
+        <div class="settings-panel">
+            <h3>⚙️ Test Settings</h3>
+            <div class="setting-row">
+                <span>⏳ Time Limit (Minutes):</span>
+                <input type="number" id="setting-time" value="120" min="10" max="300">
+            </div>
+            <div class="setting-row">
+                <span>⛔ Negative Marking:</span>
+                <select id="setting-neg">
+                    <option value="0">No Negative Marking</option>
+                    <option value="0.25">1/4 (-0.25 Marks)</option>
+                    <option value="0.33" selected>1/3 (-0.33 Marks)</option>
+                    <option value="0.5">1/2 (-0.50 Marks)</option>
+                </select>
+            </div>
+            <div class="setting-row">
+                <span>🔀 Randomize / Shuffle:</span>
+                <input type="checkbox" id="setting-shuffle" checked>
+            </div>
+            <div class="setting-row" style="margin-top:20px; font-size: 0.9rem; color: #dc3545;">
+                <i>*Note: Questions marked as "Wrong/Error" previously will remain hidden.</i>
+            </div>
+        </div>
+        
+        <div style="background: rgba(0,123,255,0.1); border: 1px solid var(--primary); padding: 15px; border-radius: 8px; margin-bottom: 20px; max-width: 500px; text-align: left; color: var(--text);">
+            <b>⌨️ Keyboard Shortcuts:</b><br>
+            • <b>A, B, C, D, E</b> or <b>1, 2, 3, 4, 5</b> : Select Options<br>
+            • <b>Right Arrow (➡️)</b> : Save & Next<br>
+            • <b>Left Arrow (⬅️)</b> : Previous Question
+        </div>
+
+        <button class="btn-large" onclick="startExam()">🚀 Start Full-Screen Exam</button>
+        
+        <div class="history-landing">
+            <h2>Your Past Scores 📊</h2>
+            <div style="overflow-x:auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Marks</th>
+                            <th>Correct</th>
+                            <th>Incorrect</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="hist-body-landing"></tbody>
+                </table>
+            </div>
+            <div style="display:flex; justify-content:center; gap: 10px; margin-top: 15px;">
+                <button class="btn btn-clear" onclick="clearHist()">Clear History</button>
+                <button class="btn" style="background:#dc3545;" onclick="clearErrors()">Reset Error Flags 🚩</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAUSE OVERLAY -->
+    <div id="pause-overlay" class="notranslate">
+        <h2>⏸ Test Paused</h2>
+        <p style="font-size:1.2rem; margin-bottom: 30px;">Questions are hidden to prevent cheating.</p>
+        <button class="btn-large" onclick="togglePause()">▶ Resume Test</button>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <div class="header notranslate" id="header">
+        <h1 id="lbl-header-title">EMT Chapter 3 (Part 1)</h1>
+        <div class="header-right">
+            <!-- UI Tools -->
+            <div class="tools-row">
+                <button class="tool-btn" onclick="speakQuestion()" title="Read Aloud (TTS)">🔊</button>
+                <button class="tool-btn" onclick="togglePause()" title="Pause Test" id="btn-pause">⏸</button>
+                <button class="tool-btn" onclick="toggleDarkMode()" title="Toggle Dark Mode">🌙</button>
+                <button class="tool-btn" onclick="changeFontSize(-1)" title="Decrease Font">A-</button>
+                <button class="tool-btn" onclick="changeFontSize(1)" title="Increase Font">A+</button>
+                <button class="tool-btn" onclick="toggleCalc()" title="Virtual Calculator">🖩</button>
+            </div>
+            
+            <div class="timer" id="timer">30:00</div>
+        </div>
+    </div>
+
+    <!-- VIRTUAL CALCULATOR -->
+    <div id="calculator" class="notranslate">
+        <div style="text-align:right; margin-bottom:5px;"><button onclick="toggleCalc()" style="background:none;border:none;color:var(--text);cursor:pointer;font-size:1.2rem;">✖</button></div>
+        <input type="text" id="calc-display" disabled />
+        <div class="calc-grid">
+            <button onclick="calcInput('7')">7</button><button onclick="calcInput('8')">8</button><button onclick="calcInput('9')">9</button><button onclick="calcInput('/')">÷</button>
+            <button onclick="calcInput('4')">4</button><button onclick="calcInput('5')">5</button><button onclick="calcInput('6')">6</button><button onclick="calcInput('*')">×</button>
+            <button onclick="calcInput('1')">1</button><button onclick="calcInput('2')">2</button><button onclick="calcInput('3')">3</button><button onclick="calcInput('-')">-</button>
+            <button onclick="calcInput('0')">0</button><button onclick="calcInput('.')">.</button><button onclick="calcEval()" style="background:var(--primary);color:#fff;">=</button><button onclick="calcInput('+')">+</button>
+            <button class="btn-c" onclick="calcClear()" style="grid-column: span 4;">CLEAR</button>
+        </div>
+    </div>
+
+    <!-- MAIN TEST UI -->
+    <div class="container" id="test-ui">
+        <div class="q-section">
+            <div class="q-title notranslate">
+                <span>Question <span id="lbl-qnum">1</span></span>
+                <div class="q-tools">
+                    <button class="q-tool-btn" onclick="toggleNote()">📝 Add Doubt</button>
+                    <button class="q-tool-btn" onclick="toggleErrorFlag()" id="btn-err-flag" style="color:#dc3545; border-color:#dc3545;">🚩 Mark Wrong Q</button>
+                    <span style="font-size:0.85rem; color:var(--text-muted); font-weight:normal; margin-left: 10px; display:flex; align-items:center;">Marks: +1, <span id="lbl-neg-mark">-0.33</span></span>
+                </div>
+            </div>
+            
+            <!-- Dynamic Question Container -->
+            <div id="dynamic-q-container"></div>
+            
+            <div class="note-container notranslate" id="note-container">
+                <textarea class="note-textarea" id="q-note" placeholder="Write your doubts, formulas, or notes for this question here..."></textarea>
+            </div>
+        </div>
+        
+        <div class="palette-section notranslate">
+            <div class="palette-title" id="lbl-palette-title">Question Palette</div>
+            <div class="palette-grid" id="palette"></div>
+            
+            <div style="margin-top:20px; display:flex; flex-wrap:wrap; gap:8px; color:var(--text-muted);" id="legend-container">
+                <div class="legend-item"><span class="legend-box" style="background:var(--success);"></span> Answered</div>
+                <div class="legend-item"><span class="legend-box" style="background:var(--danger);"></span> Not Answered</div>
+                <div class="legend-item"><span class="legend-box" style="background:var(--surface); border:1px solid var(--border);"></span> Not Visited</div>
+                <div class="legend-item"><span class="legend-box" style="background:var(--purple);"></span> Marked</div>
+                <div class="legend-item"><span class="legend-box" style="background:var(--purple); position:relative;"><span style="position:absolute; bottom:-2px; right:-2px; color:var(--success); font-size:8px; background:white; border-radius:50%; width:10px; height:10px; display:flex; align-items:center; justify-content:center;">✔</span></span> Ans & Marked</div>
+                <div class="legend-item"><span class="legend-box" style="background:#343a40; border:1px dashed #dc3545;"></span> Error/Skip</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FLOATING BOTTOM BAR -->
+    <div class="fixed-footer notranslate" id="footer-bar">
+        <div class="left-buttons">
+            <button class="btn btn-mark" id="btn-mark-lbl" onclick="markAndNext()">Mark for Review & Next</button>
+            <button class="btn btn-clear" id="btn-clear-lbl" onclick="clearAns()">Clear Response</button>
+        </div>
+        <div class="right-buttons">
+            <button class="btn btn-prev" id="btn-prev" onclick="nav(-1)" disabled>Back</button>
+            <button class="btn btn-next" id="btn-next" onclick="saveAndNext()">Save & Next</button>
+            <button class="btn btn-submit" id="btn-sub" onclick="submitConfirm()" style="display:none;">Submit Test</button>
+        </div>
+    </div>
+
+    <!-- ANALYSIS UI -->
+    <div class="analysis" id="analysis-ui">
+        <h1 style="text-align:center;" id="res-title" class="notranslate">Test Result & Analysis</h1>
+        
+        <div class="score-banner notranslate">
+            <h2>Your Final Score</h2>
+            <div class="final-marks" id="final-marks">0.00</div>
+            <p>Out of <span id="max-marks">0</span> (Negative Marking Applied: <span id="res-neg-mark">-0.33</span>)</p>
+            <p style="font-size:0.9rem; color:#dc3545; margin-top:5px;">(Excluded <span id="res-skipped">0</span> marked Error/Wrong questions)</p>
+            <button class="btn" style="background:var(--purple); margin-top:15px; font-size:1.1rem;" onclick="window.print()">🖨️ Download PDF Report</button>
+        </div>
+
+        <div class="charts-container notranslate">
+            <div class="pie-chart" id="pie-chart"></div>
+            <div class="chart-legend">
+                <div><span style="color:var(--success);">■</span> Correct: <span id="pc-cor">0</span>%</div>
+                <div><span style="color:var(--danger);">■</span> Incorrect: <span id="pc-inc">0</span>%</div>
+                <div><span style="color:var(--text-muted);">■</span> Unattempted: <span id="pc-un">0</span>%</div>
+            </div>
+        </div>
+        
+        <div id="main-analysis-view" class="notranslate">
+            <div class="cards">
+                <div class="card c-tot active" id="c-all" onclick="filter('all')"><h2 id="r-tot">0</h2><p>Total</p></div>
+                <div class="card c-cor" id="c-cor" onclick="filter('cor')"><h2 id="r-cor">0</h2><p>Correct</p></div>
+                <div class="card c-inc" id="c-inc" onclick="filter('inc')"><h2 id="r-inc">0</h2><p>Incorrect</p></div>
+                <div class="card c-un" id="c-un" onclick="filter('un')"><h2 id="r-un">0</h2><p>Unattempted</p></div>
+            </div>
+        </div>
+        
+        <!-- Rendered dynamically for translation support -->
+        <div class="review-box" id="review-list"></div>
+        
+        <div style="text-align:center; margin: 40px 0;" class="notranslate">
+            <button class="btn btn-next" id="btn-restart" onclick="location.reload()" style="font-size:1.2rem; padding:15px 30px;">Restart Test</button>
+        </div>
+    </div>
+
+    <script>
+        // Data injected from Python
+        var raw_questions_data = [{"id": 1, "question_en": "As per D.G.M.S. Circular No. 17 of 1964, what is the minimum required thickness of a permanent brick or concrete ventilation stopping underground?", "options_en": ["25 cm", "38 cm", "40 cm", "50 cm"], "answerIndex": 1, "solution": "D.G.M.S. सर्कुलर के अनुसार Permanent Stopping की वैधानिक मोटाई<br>1<br>न्यूनतम 38 cm (या 1 - ईंट की चौड़ाई) तय की गई है। 40 cm या 50 cm जैसे विकल्प करीब<br>लगते हैं, लेकिन सटीक नियम 38 cm ही है।<br>"}, {"id": 2, "question_en": "In Degree 2 and Degree 3 gassy coal mines, what type of air-crossing must be constructed legally?", "options_en": ["Heavy-duty canvas reinforced air-crossing", "Brick-wall overcast with concrete slab roof", "Explosion-proof air-crossing", "Steel-plate lined underground air-crossing"], "answerIndex": 2, "solution": "डिग्री 2 और 3 Gassy Coal Mines में किसी साधारण ईंट या कैनवास स्ट्रक्चर<br>के बजाय Explosion-proof स्ट्रक्चर अनिवार्य है जो किसी Explosion Wave को बिना टूटे<br>झेल सके।<br>"}, {"id": 3, "question_en": "By how much amount is a ventilation door frame set leaning forward in the direction of the air current to enable auto-closing?", "options_en": ["25 mm to 40 mm", "50 mm to 75 mm", "75 mm to 100 mm", "100 mm to 125 mm"], "answerIndex": 1, "solution": "Ventilation Door को ऑटो-क्लोजिंग बनाने के लिए फ्रेम को हवा की दिशा में<br>50 mm से 75 mm आगे झुकाया जाता है। कम या ज्यादा झुकाव से दरवाजा ठीक से काम नहीं<br>करेगा या आसानी से नहीं खुलेगा।<br>"}, {"id": 4, "question_en": "Which device is installed in the return airway of a district to intentionally increase resistance and reduce the air quantity?", "options_en": ["Booster Fan", "Air Lock", "Regulator", "Auxiliary Fan"], "answerIndex": 2, "solution": "Regulator का प्राथमिक कार्य Airway Resistance को बढ़ाकर Air Flow<br>को नियंत्रित या कम करना होता है ताकि अतिरिक्त हवा अन्य Splits में भेजी जा सके।<br>"}, {"id": 5, "question_en": "What structure is used in Bord and Pillar development headings to extend ventilation from the last ventilation connection to the working face?", "options_en": ["Concrete Stopping", "Brattice Partition", "Air Lock", "Ventilation Regulator"], "answerIndex": 1, "solution": "Last Ventilation Connection (LVC) के आगे Face Heading तक<br>ताजी हवा पहुँचाने के लिए Brattice Partition (कैनवास का पर्दा) लगाया जाता है।<br>"}, {"id": 6, "question_en": "A surface structure consisting of a compartment with two doors at the shaft top to prevent air leakage during cage movement is called:", "options_en": ["Fan Drift", "Air Lock", "Air-Crossing", "Regulator Chamber"], "answerIndex": 1, "solution": "Upcast Shaft के मुंह पर बना Air Lock दो दरवाजों का एनक्लोजर होता है<br>जो Cage Movement के समय Air Leakage को रोकता है।<br>"}, {"id": 7, "question_en": "According to Atkinson's Equation, which parameter remains identical across two parallel ventilation splits?", "options_en": ["Air Velocity (V)", "Air Quantity (Q)", "Ventilation Pressure Drop $(\\Delta P)$", "Frictional Resistance (R)"], "answerIndex": 2, "solution": "समानांतर सर्किट (Parallel Splits) के जंक्शन पॉइंट्स के बीच का Pressure<br>Drop $(\\Delta P)$ हमेशा समान रहता है, भले ही दोनों स्पिरिट्स की Quantity (Q) या<br>Resistance (R) अलग-अलग हो।<br>"}, {"id": 8, "question_en": "When the direction of airflow is the same as the direction of coal/mineral transport, the system is known as:", "options_en": ["Antitropal Ventilation", "Homotropal Ventilation", "Ascensional Ventilation", "Descensional Ventilation"], "answerIndex": 1, "solution": "जब Airflow और Mineral Transport (कन्वेयर/टब) दोनों एक ही दिशा में<br>बहते हैं, तो उसे Homotropal Ventilation कहा जाता है।<br>"}, {"id": 9, "question_en": "Which ventilation system uses natural buoyancy to easily remove lighter gases like methane $(CH_{4})$ toward the upper workings?", "options_en": ["Descensional Ventilation", "Homotropal Ventilation", "Ascensional Ventilation", "Antitropal Ventilation"], "answerIndex": 2, "solution": "Methane $(CH_{4})$ हवा से हल्की होती है। Ascensional Ventilation में<br>हवा नीचे (Dip) से ऊपर (Rise) बहती है, जिससे Buoyancy के कारण गैस आसानी से बाहर<br>निकलती है।<br>"}, {"id": 10, "question_en": "In deep and hot underground mines, which ventilation system helps in keeping air cooler and drier at the working face?", "options_en": ["Ascensional Ventilation", "Descensional Ventilation", "Natural Ventilation", "Homotropal Ventilation"], "answerIndex": 1, "solution": "Descensional Ventilation में ताजी हवा सीधे ऊपरी हिस्से से नीचे<br>Working Face तक आती है, जिससे हवा रास्ते के गीले नालों से बचे रहने के कारण ठंडी और<br>शुष्क बनी रहती है।<br>"}, {"id": 11, "question_en": "In which ventilation arrangement are the intake shaft and upcast shaft located at the opposite boundaries of the mine lease area?", "options_en": ["Centralized Ventilation System", "Boundary Ventilation System", "Combined Central-Boundary System", "Homotropal System"], "answerIndex": 1, "solution": "Boundary Ventilation System में Downcast और Upcast Shaft<br>खदान के विपरीत छोरों पर स्थित होते हैं।<br>"}, {"id": 12, "question_en": "Why is the Bord and Pillar method more prone to air leakage compared to the Longwall method?", "options_en": ["Due to lack of auxiliary fans", "Due to the vast network of pillars and roadways creating multiple leakage pathways", "Because doors are not permitted in Bord and Pillar", "Because of lower air velocity in headings"], "answerIndex": 1, "solution": "Bord and Pillar में अत्यधिक गैलरी और पिलर्स होने से Stoppings और<br>Doors की संख्या बढ़ जाती है, जिससे Air Leakage के कई रास्ते बन जाते हैं।<br>"}, {"id": 13, "question_en": "What is the key structural feature of a German-type air lock installed at a shaft top?", "options_en": ["It is built completely above the bank level using brick walls", "It is built inside the shaft below the banking level using a movable box/ lid mechanism", "It uses flexible rubber curtains instead of steel doors", "It works without any mechanical interlocks"], "answerIndex": 1, "solution": "German-type Air Lock शाफ्ट के अंदर Banking Level के नीचे निर्मित<br>होता है जिसमें Movable Lid/Box Mechanism का उपयोग होता है।<br>"}, {"id": 14, "question_en": "In a German-type air lock, when an ascending cage approaches the surface landing, which component is lifted first?", "options_en": ["Steel sliding frame", "Wooden/Metal lid cover lifted by the winding rope capel", "Rubber seal flap", "Balanced counterweight door"], "answerIndex": 1, "solution": "Rope Capel सबसे पहले Lid Cover को ऊपर उठाता है जिससे Air<br>Leakage नियंत्रित रहते हुए केज बाहर आ पाता है।<br>"}, {"id": 15, "question_en": "On average, what percentage of the total air circulated by the main surface fan reaches the working faces in a typical in-seam coal mine?", "options_en": ["25% to 35%", "45% to 55%", "65% to 75%", "80% to 90%"], "answerIndex": 1, "solution": "खदानों में स्टॉपिंग्स और दरवाजों से रिसाव के कारण कुल हवा का मात्र 45% से<br>55% हिस्सा ही Working Faces तक पहुँचता है।<br>"}, {"id": 16, "question_en": "A fan installed underground in an airway to boost the air quantity in a high-resistance district is called a:", "options_en": ["Auxiliary Fan", "Booster Fan", "Main Surface Fan", "Scavenger Fan"], "answerIndex": 1, "solution": "Booster Fan किसी उच्च प्रतिरोध वाले डिस्ट्रिक्ट में Pressure Difference<br>बढ़ाकर Air Quantity में सुधार के लिए लगाया जाता है।<br>"}, {"id": 17, "question_en": "A fan used underground to ventilate a blind heading or a long stone drift (dead end) is classified as a:", "options_en": ["Booster Fan", "Auxiliary Fan", "Boundary Fan", "Secondary Main Fan"], "answerIndex": 1, "solution": "Auxiliary Fan डक्टिंग की मदद से किसी अकेले Blind Heading या Stone<br>Drift को वेंटिलेट करता है।<br>"}, {"id": 18, "question_en": "As per D.G.M.S. Circular No. 82 of 1963, the air quantity handled by an auxiliary fan must not exceed what fraction of the total air quantity in that airway?", "options_en": ["\\frac{1}{2}", "\\frac{1}{3}", "\\frac{1}{4}", "\\frac{1}{5}"], "answerIndex": 1, "solution": "Recirculation को रोकने के लिए ऑक्जिलरी फैन की क्षमता उस एयरवे की<br>कुल हवा के \\frac{1}{3} (एक-तिहाई) से अधिक नहीं होनी चाहिए।<br>"}, {"id": 19, "question_en": "To prevent air recirculation, an auxiliary fan must be installed at a minimum distance of how many meters outbye from the mouth of the heading?", "options_en": ["1.5 meters", "3.0 meters", "5.0 meters", "7.5 meters"], "answerIndex": 2, "solution": "नियम के अनुसार ऑक्जिलरी फैन को हेडिंग के मुहाने से कम से कम 5.0<br>meters Outbye लगाया जाना आवश्यक है।<br>"}, {"id": 20, "question_en": "In which type of auxiliary ventilation system must rigid sheet steel ducts or wire-armoured tubes be used due to suction pressure?", "options_en": ["Forcing System", "Exhausting System", "Overlap System", "Natural System"], "answerIndex": 1, "solution": "Exhausting System में अंदर Negative Suction Pressure बनता है,<br>जिससे साधारण कैनवास ट्यूब पिचक जाती है। इसलिए Rigid Steel या Wire-Armoured<br>Tubes का प्रयोग होता है।<br>"}, {"id": 21, "question_en": "To prevent electrostatic spark hazards in gassy mines, what must be provided on all metallic parts of an auxiliary fan installation?", "options_en": ["Flameproof painting", "Proper Earthing / Earth connection", "Insulation tape wrapping", "Rubber mounting pads"], "answerIndex": 1, "solution": "हवा और धूल के घर्षण से बनने वाले Static Charge को डिस्चार्ज करने के लिए<br>Earthing अनिवार्य है ताकि स्पार्किंग से Methane Ignition न हो।<br>"}, {"id": 22, "question_en": "A fan featuring two impellers rotating in opposite directions inside a cylindrical casing, generating high water gauge without guide vanes, is a:", "options_en": ["Centrifugal Fan", "Contra-rotating Axial-Flow Fan", "Radial Flow Fan", "Mixed Flow Fan"], "answerIndex": 1, "solution": "Contra-rotating Axial-Flow Fan में दो इम्पेलर्स विपरीत दिशा में घूमकर<br>उच्च Water Gauge विकसित करते हैं।<br>"}, {"id": 23, "question_en": "When a contra-rotating axial-flow fan is operated in the reverse direction, what percentage of its normal air quantity does it deliver?", "options_en": ["40%", "50%", "60%", "75%"], "answerIndex": 2, "solution": "Reverse Direction में चलाने पर यह फैन अपनी सामान्य क्षमता की 60%<br>Air Quantity ही प्रदान करता है।<br>"}, {"id": 24, "question_en": "In booster fan theory, the line/plane in the mine circuit where the pressure difference between intake and return airway becomes zero is called the:", "options_en": ["Critical Line", "Equilibrium Line", "Neutral Line", "Datum Line"], "answerIndex": 2, "solution": "वह स्थान जहाँ Intake और Return Airway के बीच Pressure<br>Difference शून्य हो जाता है, Neutral Line कहलाता है।<br>"}, {"id": 25, "question_en": "If a booster fan is installed inbye of the neutral line ( $F_{1}$ position), what severe hazard occurs?", "options_en": ["Airflow increases to dangerous velocity", "Foul/recirculated return air leaks back into the fresh intake airway", "Main surface fan trips immediately", "Water gauge drops to zero"], "answerIndex": 1, "solution": "Inbye $(F_{1})$ लगाने से Return Airway का प्रेशर Intake से अधिक हो जाता<br>है, जिससे दूषित Return Air ताजी Intake Air में लीक होने लगती है।<br>"}, {"id": 26, "question_en": "If a booster fan is installed far outbye of the neutral line $(F_{2}$ position), what is the primary operational drawback?", "options_en": ["Complete stoppage of airflow", "Excessive leakage of fresh intake air into the return airway", "High risk of methane explosion", "Immediate motor burnout"], "answerIndex": 1, "solution": "Outbye $(F_{2})$ स्थिति पर Intake और Return का दाब-अंतर बहुत बढ़ जाता<br>है, जिससे ताजी हवा बिना फेस तक पहुँचे Return Airway में लीक हो जाती है।<br>"}, {"id": 27, "question_en": "If an oversized booster fan reaches its critical pressure in a parallel split network, what happens to the unboosted parallel split?", "options_en": ["Airflow doubles in the unboosted split", "Airflow in the unboosted split becomes zero or reverses", "Airflow remains completely unaffected", "Main fan pressure increases automatically"], "answerIndex": 1, "solution": "क्रिटिकल प्रेशर पहुँचने पर Unboosted Parallel Split में हवा का प्रवाह रुक<br>जाता है या Reversal of Airflow (दिशा उलटना) हो जाता है।<br>"}, {"id": 28, "question_en": "Which formula correctly represents the combined equivalent resistance (R) of n parallel ventilation splits with individual resistances $R_{1},R_{2},...,R_{n}$?", "options_en": ["$R=R_{1}+R_{2}+...+R_{n}$", "$\\frac{1}{R}=\\frac{1}{R_{1}}+\\frac{1}{R_{2}}+...+\\frac{1}{R_{n}}$", "$\\frac{1}{\\sqrt{R}}=\\frac{1}{\\sqrt{R_{1}}}+\\frac{1}{\\sqrt{R_{2}}}+...+\\frac{1}{\\sqrt{R_{n}}}$", "$\\sqrt{R}=\\sqrt{R_{1}}+\\sqrt{R_{2}}+...+\\sqrt{R_{n}}$"], "answerIndex": 2, "solution": "समानांतर रास्तों के संयुक्त वेंटिलेशन प्रतिरोध का सही गणितीय सूत्र<br>$\\frac{1}{\\sqrt{R}}=\\frac{1}{\\sqrt{R_{1}}}+\\frac{1}{\\sqrt{R_{2}}}+...+\\frac{1}{\\sqrt{R_{n}}}$ होता है। Option (B) इलेक्ट्रिकल सर्किट का सूत्र है,<br>"}, {"id": 29, "question_en": "For two parallel splits of identical cross-section and friction factor, what is the exact relationship between air quantity (Q) and split length (L)?", "options_en": ["$Q\\propto L$", "$Q\\propto\\frac{1}{L}$", "$Q\\propto\\sqrt{L}$", "$Q\\propto\\frac{1}{\\sqrt{L}}$"], "answerIndex": 3, "solution": "Atkinson's equation से $Q^{2}\\propto\\frac{1}{L}\\Rightarrow Q\\propto\\frac{1}{\\sqrt{L}}$<br>यानी लंबाई 4 गुना करने पर हवा आधी रह जाएगी।<br>"}, {"id": 30, "question_en": "What is the main advantage of splitting the air current into multiple parallel branches underground?", "options_en": ["It increases the total equivalent resistance of the mine", "Each district receives an independent supply of fresh, gas-free air at reduced overall resistance", "It reduces the number of ventilation stoppings required", "It increases the air velocity at all main roadways"], "answerIndex": 1, "solution": "Splitting से खदान का कुल Resistance घटता है और हर डिस्ट्रिक्ट को<br>Fresh Air की स्वतंत्र सप्लाई मिलती है।<br>"}, {"id": 31, "question_en": "As per Indian Coal Mines Regulations, ventilation is considered inadequate if the percentage of firedamp in the general body of return air of a district exceeds:", "options_en": ["0.50%", "0.75%", "1.25%", "2.00%"], "answerIndex": 1, "solution": "डिस्ट्रिक्ट Return Air की जनरल बॉडी में 0.75% से अधिक Firedamp<br>$(CH_{4})$ पाए जाने पर वेंटिलेशन को अपर्याप्त माना जाता है। (1.25% पर पावर कट और निकासी<br>लागू होती है)।<br>"}, {"id": 32, "question_en": "Under Indian Coal Mines Regulations, how frequently must air quantity measurements be recorded at measuring stations in Degree 2 & 3 gassy mines?", "options_en": ["Every 7 days", "At least once in every 14 days", "Every 30 days", "Every 45 days"], "answerIndex": 1, "solution": "डिग्री 2 और 3 Gassy Mines में Air Quantity Measurement कम से<br>कम 14 दिनों में एक बार करना वैधानिक है।<br>"}, {"id": 33, "question_en": "What is the correct formula for calculating total volumetric air quantity (Q) passing through an airway of area A and average velocity v?", "options_en": ["$Q=\\frac{A}{V}$", "$Q=A\\times V$", "$Q=A^{2}\\times V$", "$Q=\\frac{V}{A}$"], "answerIndex": 1, "solution": "Volumetric Air Quantity (Q) = Cross-sectional Area (A)  \\times<br>Average Velocity (V)<br>"}, {"id": 34, "question_en": "Air expands as it ascends in an upcast shaft due to heating, gas mixing, and reduced barometric pressure. This expansion is roughly estimated at:", "options_en": ["0.5% per 100m depth", "1.0% per 100m depth", "2.0% per 100m depth", "3.5% per 100m depth"], "answerIndex": 1, "solution": "Upcast Shaft में ऊपर उठने पर Volumetric Expansion प्रति 100m<br>गहराई पर लगभग 1.0% होता है।<br>"}, {"id": 35, "question_en": "What is the typical accurate velocity measuring range for a standard mechanical vane anemometer?", "options_en": ["10 to $60~m/min$", "60 to $1000~m/min$", "1000 to $2500~m/min$", "2500 to $5000~m/min$"], "answerIndex": 1, "solution": "Mechanical Vane Anemometer की सटीक रेंज $60~m/min$ से 1000<br>$m/min$ होती है। $60~m/min$ से नीचे घर्षण त्रुटि देता है।<br>"}, {"id": 36, "question_en": "To prevent body obstruction error during anemometer reading, how should the observer hold the instrument?", "options_en": ["Close to the chest using bare hands", "Attached to a holding rod held at arm's length facing the airflow", "Suspended from the roof using a wire cord", "Resting directly on the floor track"], "answerIndex": 1, "solution": "शरीर से हवा में उत्पन्न Obstruction Effect से बचने के लिए इंस्ट्रूमेंट को<br>Holding Rod की मदद से शरीर से दूर रखा जाता है।<br>"}, {"id": 37, "question_en": "Which method is recommended for measuring average air velocity across a roadway section using an anemometer?", "options_en": ["Center point spot measurement only", "Continuous Traversing Method covering the whole cross-section", "Four-corner average method", "Roof and floor dual-point reading"], "answerIndex": 1, "solution": "रास्ते का सटीक Average Velocity पाने के लिए Continuous Traversing<br>Method द्वारा पूरे क्रॉस-सेक्शन पर एनेमोमीटर घुमाया जाता है।<br>"}, {"id": 38, "question_en": "What is the primary operational advantage of a direct-reading Velometer over a mechanical anemometer?", "options_en": ["It measures temperature along with velocity", "It instantaneously indicates spot air velocity directly without requiring a stopwatch", "It does not require periodic calibration", "It works accurately in completely still air"], "answerIndex": 1, "solution": "Velometer तुरंत (instantaneously) बिना स्टॉपवाच के डायल पर स्पॉट<br>स्पीड दर्शा देता है।<br>"}, {"id": 39, "question_en": "What structural feature makes the pivoted vanes of a high-precision Velometer exceptionally sensitive to low velocity?", "options_en": ["Heavy brass bush bearings", "Precision jewel bearings", "Sealed ball bearings", "Magnetic dampers"], "answerIndex": 1, "solution": "Precision Jewel Bearings घर्षण को नगण्य कर देते हैं जिससे यह बहुत<br>कम स्पीड पर भी सटीक रीडिंग देता है।<br>"}, {"id": 40, "question_en": "A modern BA 4 Air Velocity Monitor operates on which physical sensing principle?", "options_en": ["Differential pressure tube", "Vortex shedding sensor with no moving parts", "Thermal hot-wire anemometry", "Rotary cup displacement"], "answerIndex": 1, "solution": "BA 4 Velocity Monitor में Vortex Shedding Principle का प्रयोग होता<br>है जिसमें कोई Moving Part नहीं होता।<br>"}, {"id": 41, "question_en": "In a BA 4 Air Velocity Monitor, at what rate does the indicator lamp flash during an 'Alarm Condition' (low velocity)?", "options_en": ["Flashes once every 16 seconds", "Continuous steady ON", "Flashes once every second", "Flashes 5 times per second"], "answerIndex": 2, "solution": "सामान्य स्थिति में लैम्प प्रति 16 सेकंड में 1 बार जलता है, लेकिन Alarm<br>Condition में यह प्रति सेकंड 1 बार (Once every second) फ्लैश करता है।<br>"}, {"id": 42, "question_en": "Which instrument/method is preferred for detecting very low air velocities $(<0.5~m/s)$ and checking the air-tightness of ventilation stoppings?", "options_en": ["Pitot Tube", "Smoke Generator / Smoke Tube", "Mechanical Anemometer", "Aneroid Barometer"], "answerIndex": 1, "solution": "$0.5~m/s$ से कम गति और स्टॉपिंग्स से Air Leakage का पता लगाने के लिए<br>Smoke Tube से निकला सफेद धुआँ सबसे उपयुक्त होता है।<br>"}, {"id": 43, "question_en": "What chemical compound inside a glass smoke tube reacts with atmospheric moisture to produce dense white smoke?", "options_en": ["Calcium Chloride", "Titanium Tetrachloride or Anhydrous Stannic Chloride", "Ammonium Nitrate", "Potassium Permanganate"], "answerIndex": 1, "solution": "Titanium Tetrachloride $(TiCl_{4})$ हवा की नमी के साथ तुरंत अभिक्रिया<br>करके घने सफ़ेद धुएँ $(TiO_{2}+HCl)$ का निर्माण करता है।<br>"}, {"id": 44, "question_en": "Underground ventilation pressure surveys rely fundamentally on which energy conservation theorem?", "options_en": ["Pascal's Law", "Bernoulli's Theorem", "Newton's Viscosity Law", "Darcy's Law"], "answerIndex": 1, "solution": "वेंटिलेशन प्रेशर सर्वे तरल प्रवाह में ऊर्जा संरक्षण के Bernoulli's Theorem<br>(Static Pressure + Velocity Pressure + Potential Energy = Constant) पर आधारित है।<br>"}, {"id": 45, "question_en": "When conducting a gauge-and-tube pressure survey, what instrument is used alongside long flexible plastic tubing to measure differential pressure?", "options_en": ["Aneroid Barometer", "Inclined Liquid Manometer", "Velometer", "Hygrometer"], "answerIndex": 1, "solution": "Gauge-and-tube method में लंबी प्लास्टिक होज़ के साथ सूक्ष्म दाब-अंतर<br>मापने के लिए Inclined Liquid Manometer का प्रयोग किया जाता है।<br>"}, {"id": 46, "question_en": "For maximum accuracy, on which day should a comprehensive mine ventilation pressure survey be conducted?", "options_en": ["On peak production days during shift change", "On rest days/holidays when coal winning and haulage activities are stopped", "On rainy days during high barometric pressure", "During active blasting operations"], "answerIndex": 1, "solution": "Rest Days / Holidays पर ट्रैन मूवमेंट, केज वाइंडिंग और ब्लास्टिंग बंद होने<br>से हवा के प्रवाह और दाब में उतार-चढ़ाव नहीं होता, जिससे सर्वे सटीक आता है।<br>"}, {"id": 47, "question_en": "What is the unit of rating used to express the cooling capacity of a mine refrigeration plant?", "options_en": ["Kilowatt-hour (kWh)", "Tonne of Refrigeration (TR)", "Horsepower (HP)", "Cubic meters per second $(m^{3}/s)$"], "answerIndex": 1, "solution": "रेफ्रिजरेशन प्लांट की कूलिंग क्षमता को Tonne of Refrigeration (TR) में<br>मापा जाता है।<br>"}, {"id": 48, "question_en": "One Tonne of Refrigeration (1 TR) capacity corresponds to heat extraction at a rate of:", "options_en": ["1,000 kcal/hr", "3,024 kcal/hr", "5,000 kcal/hr", "12,000 kcal/hr"], "answerIndex": 1, "solution": "1 TR की कूलिंग दर अंतर्राष्ट्रीय मानकों के अनुसार 3,024 kcal/hr (या 12,000<br>BTU/hr/ 3.517 kW) होती है।<br>"}, {"id": 49, "question_en": "Why is a weak calcium chloride brine solution used instead of plain water in secondary cooling circuits of underground plants?", "options_en": ["To increase fluid viscosity", "To lower the freezing point of the coolant and prevent ice formation inside pipes", "To act as an anti-corrosion layer", "To neutralize methane gas"], "answerIndex": 1, "solution": "Calcium Chloride Brine Solution का उपयोग Freezing Point को<br>0°C से कम करने के लिए किया जाता है ताकि कूलेंट पाइपों के अंदर जमे नहीं।<br>"}, {"id": 50, "question_en": "Why is Freon-12 $(CF_{2}Cl_{2})$ or modern eco-refrigerants preferred over Ammonia $(NH_{3})$ for underground refrigeration plants?", "options_en": ["Ammonia is too expensive to manufacture", "Freon is non-toxic and non-flammable, whereas Ammonia is toxic and explosive in air", "Ammonia cannot condense at underground temperatures", "Freon does not require compressors"], "answerIndex": 1, "solution": "Ammonia $(NH_{3})$ विषैली (Toxic) और हवा में विस्फोटक होती है। इसलिए<br>खदानों के अंदर सुरक्षित Non-toxic और Non-flammable (जैसे Freon/R-134a)<br>रेफ्रिजरेंट्स ही प्रयोग किए जाते हैं।"}];
+        var questions_data = []; 
+        
+        var curIdx = 0;
+        var total = raw_questions_data.length;
+        var answers = [];
+        var visited = [];
+        var marked = []; 
+        var timeSpentArr = []; 
+        var userNotes = []; 
+        
+        // NEW ERROR FLAG FEATURE
+        var errorFlags = {}; // Stored by true question ID to persist across shuffles
+        var TEST_KEY_BASE = 'UltraPro_Test_EMTChapter3Part1';
+        var ERR_KEY = TEST_KEY_BASE + '_ErrorFlags';
+        var HIST_KEY = TEST_KEY_BASE + '_History';
+        
+        var qEnterTime = Date.now();
+        var currentFontSize = 16;
+        var isDarkMode = false;
+        var isPaused = false;
+        
+        var setTimeMins = 120;
+        var setNegMark = 0.33;
+        var isShuffle = true;
+        var timerObj = null;
+        var timeLeft = 0;
+        var finalScore = 0;
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+        
+        function loadErrors() {
+            try { errorFlags = JSON.parse(localStorage.getItem(ERR_KEY)) || {}; }
+            catch(e) { errorFlags = {}; }
+        }
+        
+        function toggleErrorFlag() {
+            let trueId = questions_data[curIdx].id;
+            errorFlags[trueId] = !errorFlags[trueId];
+            localStorage.setItem(ERR_KEY, JSON.stringify(errorFlags));
+            
+            // Clear answer if marked as error
+            if(errorFlags[trueId]) answers[curIdx] = null; 
+            
+            updatePal();
+            showQ(curIdx); // re-render
+        }
+
+        function clearErrors() {
+            if(confirm("Are you sure you want to clear all 'Wrong Question' flags for this test?")) {
+                localStorage.removeItem(ERR_KEY);
+                errorFlags = {};
+                alert("Error flags cleared.");
+            }
+        }
+
+        function startExam() {
+            setTimeMins = parseInt(document.getElementById('setting-time').value) || 120;
+            setNegMark = parseFloat(document.getElementById('setting-neg').value) || 0;
+            isShuffle = document.getElementById('setting-shuffle').checked;
+            
+            document.getElementById('lbl-neg-mark').innerText = "-" + setNegMark;
+            document.getElementById('res-neg-mark').innerText = "-" + setNegMark;
+            timeLeft = setTimeMins * 60;
+            
+            loadErrors();
+            
+            questions_data = JSON.parse(JSON.stringify(raw_questions_data));
+            
+            if(isShuffle) {
+                shuffleArray(questions_data);
+                questions_data.forEach(q => {
+                    let optsMapped = q.options_en.map((text, idx) => ({ text: text, isCorrect: idx === q.answerIndex }));
+                    shuffleArray(optsMapped);
+                    q.options_en = optsMapped.map(o => o.text);
+                    q.answerIndex = optsMapped.findIndex(o => o.isCorrect);
+                });
+            }
+            
+            for(var i=0; i<total; i++) {
+                answers.push(null);
+                visited.push(false);
+                marked.push(false);
+                timeSpentArr.push(0);
+                userNotes.push("");
+            }
+
+            try {
+                var elem = document.documentElement;
+                if (elem.requestFullscreen) { let p = elem.requestFullscreen(); if(p && p.catch) p.catch(e=>{}); }
+                else if (elem.webkitRequestFullscreen) { let p = elem.webkitRequestFullscreen(); if(p && p.catch) p.catch(e=>{}); }
+                else if (elem.msRequestFullscreen) { let p = elem.msRequestFullscreen(); if(p && p.catch) p.catch(e=>{}); }
+            } catch(err) { }
+            
+            document.getElementById('landing-page').style.display = 'none';
+            document.getElementById('header').style.display = 'flex';
+            document.getElementById('test-ui').style.display = 'flex';
+            document.getElementById('footer-bar').style.display = 'flex';
+            
+            timerObj = setInterval(function() {
+                if(!isPaused) {
+                    timeLeft--;
+                    var m = Math.floor(timeLeft / 60);
+                    var s = timeLeft % 60;
+                    document.getElementById('timer').innerText = (m < 10 ? '0'+m : m) + ':' + (s < 10 ? '0'+s : s);
+                    if(timeLeft <= 0) { clearInterval(timerObj); forceSubmit(); }
+                }
+            }, 1000);
+            
+            qEnterTime = Date.now();
+            renderPal();
+            showQ(0);
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if(document.getElementById('test-ui').style.display === 'none' || isPaused) return;
+            if(document.activeElement.tagName === 'TEXTAREA') return;
+
+            if(e.key === 'ArrowRight') { saveAndNext(); e.preventDefault(); }
+            if(e.key === 'ArrowLeft') { nav(-1); e.preventDefault(); }
+            
+            let trueId = questions_data[curIdx].id;
+            if(errorFlags[trueId]) return; // Do not allow selection if flagged as error
+
+            if(['a','A','1'].includes(e.key)) document.getElementById('opt-rad-0')?.click();
+            if(['b','B','2'].includes(e.key)) document.getElementById('opt-rad-1')?.click();
+            if(['c','C','3'].includes(e.key)) document.getElementById('opt-rad-2')?.click();
+            if(['d','D','4'].includes(e.key)) document.getElementById('opt-rad-3')?.click();
+            if(['e','E','5'].includes(e.key)) document.getElementById('opt-rad-4')?.click();
+        });
+
+        function speakQuestion() {
+            if('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                let q = questions_data[curIdx];
+                let textToRead = "Question. " + q.question_en + ". Options are. ";
+                let labels = ['A', 'B', 'C', 'D', 'E'];
+                q.options_en.forEach((opt, i) => { textToRead += labels[i] + ". " + opt + ". "; });
+                let utterance = new SpeechSynthesisUtterance(textToRead);
+                utterance.rate = 0.9;
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert("Text-to-Speech is not supported in your browser.");
+            }
+        }
+
+        function togglePause() {
+            isPaused = !isPaused;
+            var overlay = document.getElementById('pause-overlay');
+            var btn = document.getElementById('btn-pause');
+            
+            if(isPaused) {
+                overlay.style.display = 'flex';
+                btn.innerText = '▶';
+                var spent = Math.floor((Date.now() - qEnterTime) / 1000);
+                timeSpentArr[curIdx] += spent;
+                if('speechSynthesis' in window) window.speechSynthesis.cancel();
+            } else {
+                overlay.style.display = 'none';
+                btn.innerText = '⏸';
+                qEnterTime = Date.now(); 
+            }
+        }
+
+        function toggleDarkMode() {
+            isDarkMode = !isDarkMode;
+            document.body.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
+        }
+
+        function changeFontSize(step) {
+            currentFontSize += (step * 2);
+            if(currentFontSize < 12) currentFontSize = 12;
+            if(currentFontSize > 26) currentFontSize = 26;
+            
+            document.querySelectorAll('.q-text').forEach(e => e.style.fontSize = currentFontSize + 'px');
+            document.querySelectorAll('.options-list').forEach(e => e.style.fontSize = currentFontSize + 'px');
+        }
+
+        var calcDisp = document.getElementById('calc-display');
+        var calcStr = "";
+        function toggleCalc() { var c = document.getElementById('calculator'); c.style.display = c.style.display === 'block' ? 'none' : 'block'; }
+        function calcInput(val) { calcStr += val; calcDisp.value = calcStr; }
+        function calcClear() { calcStr = ""; calcDisp.value = ""; }
+        function calcEval() { try { calcStr = eval(calcStr).toString(); calcDisp.value = calcStr; } catch(e) { calcDisp.value = "Error"; calcStr=""; } }
+
+        function toggleNote() {
+            var c = document.getElementById('note-container');
+            c.style.display = c.style.display === 'block' ? 'none' : 'block';
+            if(c.style.display === 'block') document.getElementById('q-note').focus();
+        }
+        
+        document.getElementById('q-note').addEventListener('input', function(e) {
+            userNotes[curIdx] = e.target.value;
+            updatePal(); 
+        });
+
+        function renderPal() {
+            var grid = document.getElementById('palette');
+            grid.innerHTML = '';
+            for(var i=0; i<total; i++) {
+                var btn = document.createElement('button');
+                btn.className = 'p-btn';
+                btn.innerText = i + 1; // logical order
+                btn.id = "pbtn-" + i;
+                (function(idx) { btn.onclick = function() { showQ(idx); }; })(i);
+                grid.appendChild(btn);
+            }
+            updatePal();
+        }
+
+        function updatePal() {
+            for(var i=0; i<total; i++) {
+                var btn = document.getElementById('pbtn-' + i);
+                if(!btn) continue;
+                
+                var c = 'p-btn';
+                let trueId = questions_data[i].id;
+                
+                // ERROR FLAG OVERRIDE
+                if(errorFlags[trueId]) {
+                    c += ' error-flag';
+                } else {
+                    if(marked[i]) {
+                        if(answers[i] !== null) c += ' ans-marked';
+                        else c += ' marked';
+                    } else {
+                        if(answers[i] !== null) c += ' ans';
+                        else if(visited[i]) c += ' not-ans';
+                    }
+                }
+                
+                if(userNotes[i].trim() !== "") c += ' has-note';
+                if(i === curIdx) c += ' active';
+                
+                btn.className = c;
+            }
+        }
+
+        function showQ(idx) {
+            var now = Date.now();
+            var spent = Math.floor((now - qEnterTime) / 1000);
+            timeSpentArr[curIdx] += spent;
+            
+            curIdx = idx;
+            visited[idx] = true;
+            qEnterTime = Date.now();
+            
+            var q = questions_data[idx];
+            let trueId = q.id;
+            let isErr = errorFlags[trueId] ? true : false;
+            
+            document.getElementById('lbl-qnum').innerText = (idx + 1) + " (ID:" + trueId + ")";
+            
+            var container = document.getElementById('dynamic-q-container');
+            
+            var errHtml = isErr ? `<div class="error-banner notranslate">🚩 You marked this question as WRONG or ERROR. It will be skipped from scoring.</div>` : ``;
+            var disableWrap = isErr ? `class="error-flagged-content"` : ``;
+            var disableInput = isErr ? `disabled` : ``;
+            
+            var btnFlag = document.getElementById('btn-err-flag');
+            if(isErr) { btnFlag.innerText = "❌ Unmark Error"; btnFlag.style.background = "#dc3545"; btnFlag.style.color = "#fff"; }
+            else { btnFlag.innerText = "🚩 Mark Wrong Q"; btnFlag.style.background = "var(--bg)"; btnFlag.style.color = "#dc3545"; }
+
+            var labels = ['A', 'B', 'C', 'D', 'E'];
+            var html = errHtml + `<div ${disableWrap}><div class="q-text" style="font-size:${currentFontSize}px;">${q.question_en}</div><ul class="options-list" style="font-size:${currentFontSize}px;">`;
+            
+            for(var i=0; i<q.options_en.length; i++) {
+                var isChecked = (answers[idx] === i) ? 'checked' : '';
+                html += `
+                <li>
+                    <label>
+                        <input type="radio" name="opt" id="opt-rad-${i}" value="${i}" onchange="selectAnswer(${idx}, ${i})" ${isChecked} ${disableInput}>
+                        ${labels[i]}) ${q.options_en[i]}
+                        <span class="shortcut-badge notranslate">[${labels[i]}]</span>
+                    </label>
+                </li>`;
+            }
+            html += `</ul></div>`;
+            
+            container.innerHTML = html;
+            
+            document.getElementById('q-note').value = userNotes[idx];
+            document.getElementById('note-container').style.display = userNotes[idx] ? 'block' : 'none';
+            
+            updatePal();
+            
+            document.getElementById('btn-prev').disabled = (idx === 0);
+            
+            var btnNext = document.getElementById('btn-next');
+            var btnSub = document.getElementById('btn-sub');
+            
+            if(idx === total - 1) {
+                btnNext.style.display = 'none';
+                btnSub.style.display = 'inline-block';
+            } else {
+                btnNext.style.display = 'inline-block';
+                btnSub.style.display = 'none';
+            }
+            
+            if (window.MathJax) {
+                MathJax.typesetPromise([container]).catch(function (err) { console.log('MathJax error: ', err.message); });
+            }
+        }
+
+        function selectAnswer(qIdx, optIdx) {
+            answers[qIdx] = optIdx;
+            updatePal();
+        }
+
+        function nav(step) {
+            if('speechSynthesis' in window) window.speechSynthesis.cancel();
+            var n = curIdx + step;
+            if(n >= 0 && n < total) showQ(n);
+        }
+
+        function clearAns() {
+            answers[curIdx] = null;
+            var radios = document.getElementsByName('opt');
+            for(var i=0; i<radios.length; i++) radios[i].checked = false;
+            updatePal();
+        }
+
+        function markAndNext() {
+            marked[curIdx] = true;
+            var n = curIdx + 1;
+            if(n < total) showQ(n);
+            else updatePal(); 
+        }
+
+        function saveAndNext() {
+            marked[curIdx] = false; 
+            var n = curIdx + 1;
+            if(n < total) showQ(n);
+            else updatePal();
+        }
+
+        function submitConfirm() {
+            if(confirm("Submit the test? You cannot change answers after submission.")) forceSubmit();
+        }
+
+        function forceSubmit() {
+            var spent = Math.floor((Date.now() - qEnterTime) / 1000);
+            timeSpentArr[curIdx] += spent;
+            if('speechSynthesis' in window) window.speechSynthesis.cancel();
+            
+            clearInterval(timerObj);
+            document.getElementById('test-ui').style.display = 'none';
+            document.getElementById('footer-bar').style.display = 'none';
+            document.getElementById('header').style.display = 'none';
+            if(document.getElementById('gt-container')) document.getElementById('gt-container').style.display = 'none';
+            document.getElementById('analysis-ui').style.display = 'block';
+            
+            try {
+                if (document.exitFullscreen) { let p = document.exitFullscreen(); if(p && p.catch) p.catch(e=>{}); }
+            } catch(err) {}
+            
+            calcRes();
+            saveHist();
+            filter('all');
+            renderHist();
+        }
+
+        var correctCnt = 0, incCnt = 0, unCnt = 0, errSkipCnt = 0;
+        
+        function calcRes() {
+            correctCnt = 0; incCnt = 0; unCnt = 0; errSkipCnt = 0;
+            for(var i=0; i<total; i++) {
+                let trueId = questions_data[i].id;
+                if(errorFlags[trueId]) {
+                    errSkipCnt++;
+                    continue; // Do not score flagged questions
+                }
+                
+                if(answers[i] === null) unCnt++;
+                else if(answers[i] === questions_data[i].answerIndex) correctCnt++;
+                else incCnt++;
+            }
+            
+            finalScore = (correctCnt * 1) - (incCnt * setNegMark);
+            let validTotal = total - errSkipCnt;
+            
+            document.getElementById('max-marks').innerText = validTotal;
+            document.getElementById('res-skipped').innerText = errSkipCnt;
+            document.getElementById('final-marks').innerText = finalScore.toFixed(2);
+            
+            document.getElementById('r-tot').innerText = validTotal;
+            document.getElementById('r-cor').innerText = correctCnt;
+            document.getElementById('r-inc').innerText = incCnt;
+            document.getElementById('r-un').innerText = unCnt;
+            
+            var pCor = Math.round((correctCnt / validTotal) * 100) || 0;
+            var pInc = Math.round((incCnt / validTotal) * 100) || 0;
+            var pUn = 100 - pCor - pInc;
+            if(pUn < 0) pUn = 0;
+            
+            document.getElementById('pc-cor').innerText = pCor;
+            document.getElementById('pc-inc').innerText = pInc;
+            document.getElementById('pc-un').innerText = pUn;
+            
+            var c1 = pCor;
+            var c2 = pCor + pInc;
+            
+            var chart = document.getElementById('pie-chart');
+            chart.style.background = `conic-gradient(var(--success) 0% ${c1}%, var(--danger) ${c1}% ${c2}%, #6c757d ${c2}% 100%)`;
+        }
+
+        function formatTime(sec) {
+            if(sec < 60) return sec + "s";
+            var m = Math.floor(sec/60);
+            var s = sec%60;
+            return m + "m " + s + "s";
+        }
+
+        function renderReviewBox(targetData, targetAnswers, targetTimes, targetNotes) {
+            var list = document.getElementById('review-list');
+            list.innerHTML = '';
+            var labels = ['A', 'B', 'C', 'D', 'E'];
+            var cnt = 0;
+            
+            var useQ = targetData || questions_data;
+            var useAns = targetAnswers || answers;
+            var useTimes = targetTimes || timeSpentArr;
+            var useNotes = targetNotes || userNotes;
+            
+            for(var i=0; i<total; i++) {
+                var q = useQ[i];
+                var uAns = useAns[i];
+                var tSp = useTimes[i];
+                var nTxt = useNotes[i];
+                var trueId = q.id;
+                var isErr = errorFlags[trueId] ? true : false;
+                
+                var stat = 'r-un';
+                if(isErr) {
+                    stat = 'r-err';
+                } else if(uAns !== null) {
+                    stat = (uAns === q.answerIndex) ? 'r-cor' : 'r-inc';
+                }
+                
+                var show = false;
+                if(window.currentFilter === 'all') show = true;
+                if(window.currentFilter === 'cor' && stat === 'r-cor') show = true;
+                if(window.currentFilter === 'inc' && stat === 'r-inc') show = true;
+                if(window.currentFilter === 'un' && stat === 'r-un') show = true;
+                
+                if(show) {
+                    cnt++;
+                    var div = document.createElement('div');
+                    div.className = 'r-item ' + stat;
+                    
+                    var userTxt = uAns !== null ? labels[uAns] + ") " + q.options_en[uAns] : 'Not Attempted';
+                    var corTxt = labels[q.answerIndex] + ") " + q.options_en[q.answerIndex];
+                    
+                    var lbl = "";
+                    if(isErr) lbl = `<span style="color:#dc3545">🚩 Skipped (Error Flag)</span>`;
+                    else if(stat === 'r-cor') lbl = `<span style="color:var(--success)">Correct (+1)</span>`;
+                    else if(stat === 'r-inc') lbl = `<span style="color:var(--danger)">Incorrect (-${setNegMark})</span>`;
+                    else lbl = `<span style="color:#6c757d">Unattempted (0)</span>`;
+                    
+                    var solText = q.solution ? q.solution : "<span style='color:var(--text-muted);font-style:italic;'>[Solution not provided]</span>";
+                    var noteHtml = nTxt ? `<div class="r-n notranslate"><strong>My Doubt/Note:</strong> ${nTxt}</div>` : "";
+                    
+                    div.innerHTML = `<div class="r-q">Q${i+1} (ID:${trueId}). <span>${q.question_en}</span> <span class="notranslate">[${lbl}]</span></div>
+                                    <div class="time-badge notranslate">⏱️ Time Spent: ${formatTime(tSp)}</div>
+                                    <div class="r-a" style="margin-top:10px;"><strong class="notranslate">Your Answer:</strong> <span>${userTxt}</span></div>
+                                    <div class="r-a"><strong class="notranslate">Correct Answer:</strong> <span style="color:var(--success)">${corTxt}</span></div>
+                                    <div class="r-a" style="margin-top:8px; padding-top:8px; border-top:1px dashed var(--border);"><strong>Solution/Explanation:</strong> <span>${solText}</span></div>
+                                    ${noteHtml}`;
+                    list.appendChild(div);
+                }
+            }
+            if(cnt === 0) list.innerHTML = '<div style="text-align:center; padding:20px;" class="notranslate">No questions found.</div>';
+            else if (window.MathJax) MathJax.typesetPromise([list]).catch(function(e){});
+        }
+
+        window.currentFilter = 'all';
+        function filter(type) {
+            window.currentFilter = type;
+            var cards = document.getElementsByClassName('card');
+            for(var i=0; i<cards.length; i++) cards[i].className = cards[i].className.replace(' active', '');
+            document.getElementById('c-' + type).className += ' active';
+            renderReviewBox(window.activeViewingData, window.activeViewingAnswers, window.activeViewingTimes, window.activeViewingNotes);
+        }
+
+        function getHist() {
+            try { return JSON.parse(localStorage.getItem(HIST_KEY)) || []; } catch(e) { return []; }
+        }
+
+        function saveHist() {
+            try {
+                var h = getHist();
+                var d = new Date();
+                h.push({
+                    id: Date.now(),
+                    date: d.toLocaleDateString() + ' ' + d.toLocaleTimeString(),
+                    score: finalScore.toFixed(2) + " / " + (total - errSkipCnt),
+                    c: correctCnt, i: incCnt, u: unCnt, e: errSkipCnt,
+                    savedData: JSON.parse(JSON.stringify(questions_data)),
+                    savedAnswers: answers.slice(), savedTimes: timeSpentArr.slice(), savedNotes: userNotes.slice()
+                });
+                localStorage.setItem(HIST_KEY, JSON.stringify(h));
+            } catch(e) {}
+        }
+
+        function renderHist() {
+            var h = getHist();
+            var tb = document.getElementById('hist-body-landing');
+            if(!tb) return;
+            tb.innerHTML = '';
+            
+            if(h.length === 0) {
+                tb.innerHTML = '<tr><td colspan="5" style="text-align:center;" class="notranslate">No past records.</td></tr>';
+                return;
+            }
+            for(var i=h.length-1; i>=0; i--) {
+                var tr = document.createElement('tr');
+                var btnHtml = `<button class="hist-btn notranslate" onclick="viewPastTest(${h[i].id})">View Details</button>`;
+                
+                tr.innerHTML = `<td class="notranslate">${h[i].date}</td>
+                               <td class="notranslate" style="color:var(--primary);"><strong>${h[i].score}</strong></td>
+                               <td style="color:var(--success)" class="notranslate">${h[i].c}</td>
+                               <td style="color:var(--danger)" class="notranslate">${h[i].i}</td>
+                               <td>${btnHtml}</td>`;
+                tb.appendChild(tr);
+            }
+        }
+
+        function viewPastTest(pastId) {
+            var h = getHist();
+            var record = null;
+            for(var i=0; i<h.length; i++) if(h[i].id === pastId) { record = h[i]; break; }
+            
+            if(record && record.savedAnswers) {
+                document.getElementById('landing-page').style.display = 'none';
+                if(document.getElementById('gt-container')) document.getElementById('gt-container').style.display = 'none';
+                document.querySelector('.charts-container').style.display = 'none';
+                document.querySelector('.score-banner').style.display = 'none';
+                document.getElementById('analysis-ui').style.display = 'block';
+                
+                let vTot = record.c + record.i + record.u;
+                document.getElementById('r-tot').innerText = vTot;
+                document.getElementById('r-cor').innerText = record.c;
+                document.getElementById('r-inc').innerText = record.i;
+                document.getElementById('r-un').innerText = record.u;
+                
+                document.getElementById('res-title').innerHTML = 'Analysis: Past Test (' + record.date + ') - Score: <span style="color:var(--primary)">' + record.score + '</span>';
+                window.scrollTo(0, 0);
+                
+                window.activeViewingData = record.savedData || raw_questions_data;
+                window.activeViewingAnswers = record.savedAnswers;
+                window.activeViewingTimes = record.savedTimes || new Array(total).fill(0);
+                window.activeViewingNotes = record.savedNotes || new Array(total).fill("");
+                filter('all');
+            }
+        }
+
+        function clearHist() {
+            if(confirm("Clear all past history?")) { try { localStorage.removeItem(HIST_KEY); renderHist(); } catch(e){} }
+        }
+
+        window.onload = function() { loadErrors(); renderHist(); };
+    </script>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'hi,en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/focus?view=access&id=&range=30d",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "SetPaper",
+      "hasCanvas": false,
+      "bodyTextLen": 1227,
+      "bodyTextHash": "d4336f1a63726d48e23e464ec6c1f14f47f7ac487a45d04bf692c148261e7efa",
+      "bodyTextPrefix": "Device access Shield is off Grant notifications, keep-awake, and",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/focus-access.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "SetPaper",
+      "hasCanvas": false,
+      "bodyTextLen": 1227,
+      "bodyTextHash": "d4336f1a63726d48e23e464ec6c1f14f47f7ac487a45d04bf692c148261e7efa",
+      "bodyTextPrefix": "Device access Shield is off Grant notifications, keep-awake, and",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/focus-access-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/focus-access.json"
+}

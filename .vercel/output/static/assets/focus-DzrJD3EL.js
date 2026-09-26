@@ -1,0 +1,1 @@
+import{Mt as e}from"./button-B-e_CkbB.js";import{g as t,h as n}from"./index-Ch6QD61c.js";var r=e();function i(){let e=n.useSearch();return(0,r.jsx)(t,{search:e})}export{i as component};

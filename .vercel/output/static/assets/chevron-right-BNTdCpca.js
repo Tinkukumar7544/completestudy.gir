@@ -1,0 +1,1 @@
+import{xt as e}from"./button-B-e_CkbB.js";var t=e(`chevron-right`,[[`path`,{d:`m9 18 6-6-6-6`,key:`mthhwq`}]]);export{t};
